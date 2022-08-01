@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.st0 {
+  fill: #f2f2f2;
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+#korea_text,
+#japan_text,
+#china_text,
+#malaysia_text {
+  visibility: hidden;
+}
+
+.country_container:hover,
+.country_text:hover {
+  cursor: pointer;
+}
+
+.country_text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

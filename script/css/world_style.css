@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+svg {
+  position: absolute;
+  z-index: 0;
+}
+
+.test {
+  transition: all 1s linear;
+  transform-origin: top right;
+  transform: scale(1.6);
+  overflow: hidden;
+}
+
+.asia {
+  fill: rgb(199, 255, 234);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.europe {
+  fill: rgb(119, 205, 255);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.oceania {
+  fill: rgb(201, 123, 253);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.africa {
+  fill: rgb(251, 255, 0);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.northAmerica {
+  fill: rgb(46, 79, 226);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.southAmerica {
+  fill: rgb(248, 83, 71);
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+.st0 {
+  fill: #f2f2f2;
+  stroke: #000000;
+  stroke-linejoin: round;
+}
+
+#info_text {
+  margin: 0;
+  color: rgb(0, 252, 176);
+  font-size: 5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#info_background {
+  position: absolute;
+  height: 91px;
+  width: 100%;
+  pointer-events: none;
+  text-align: center;
+  z-index: 1;
+}
+
+@keyframes background_show {
+  from {
+    background-color: rgb(255, 255, 255, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes background_disappear {
+  from {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background-color: rgb(255, 255, 255, 0);
+  }
+}
+
+@keyframes font_show {
+  from {
+    color: rgba(0, 0, 0, 0);
+  }
+  to {
+    color: rgba(0, 252, 176, 1);
+  }
+}
+
+@keyframes font_disappear {
+  from {
+    color: rgba(0, 252, 176, 1);
+  }
+  to {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes land_disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

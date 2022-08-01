@@ -1,0 +1,2907 @@
+#AF {
+  stroke-dasharray: 259;
+  stroke-dashoffset: -259;
+  animation: AF 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AF {
+  from {
+    stroke-dashoffset: 259;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AO {
+  stroke-dasharray: 327;
+  stroke-dashoffset: -327;
+  animation: AO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AO {
+  from {
+    stroke-dashoffset: 327;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AL {
+  stroke-dasharray: 47;
+  stroke-dashoffset: -47;
+  animation: AL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AL {
+  from {
+    stroke-dashoffset: 47;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AE {
+  stroke-dasharray: 85;
+  stroke-dashoffset: -85;
+  animation: AE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AE {
+  from {
+    stroke-dashoffset: 85;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AR {
+  stroke-dasharray: 659;
+  stroke-dashoffset: -659;
+  animation: AR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AR {
+  from {
+    stroke-dashoffset: 659;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AM {
+  stroke-dasharray: 56;
+  stroke-dashoffset: -56;
+  animation: AM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AM {
+  from {
+    stroke-dashoffset: 56;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AU {
+  stroke-dasharray: 984;
+  stroke-dashoffset: -984;
+  animation: AU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AU {
+  from {
+    stroke-dashoffset: 984;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AT {
+  stroke-dasharray: 102;
+  stroke-dashoffset: -102;
+  animation: AT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AT {
+  from {
+    stroke-dashoffset: 102;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AZ {
+  stroke-dasharray: 129;
+  stroke-dashoffset: -129;
+  animation: AZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AZ {
+  from {
+    stroke-dashoffset: 129;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BI {
+  stroke-dasharray: 37;
+  stroke-dashoffset: -37;
+  animation: BI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BI {
+  from {
+    stroke-dashoffset: 37;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BE {
+  stroke-dasharray: 48;
+  stroke-dashoffset: -48;
+  animation: BE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BE {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BJ {
+  stroke-dasharray: 94;
+  stroke-dashoffset: -94;
+  animation: BJ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BJ {
+  from {
+    stroke-dashoffset: 94;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BF {
+  stroke-dasharray: 134;
+  stroke-dashoffset: -134;
+  animation: BF 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BF {
+  from {
+    stroke-dashoffset: 134;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BD {
+  stroke-dasharray: 142;
+  stroke-dashoffset: -142;
+  animation: BD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BD {
+  from {
+    stroke-dashoffset: 142;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BG {
+  stroke-dasharray: 97;
+  stroke-dashoffset: -97;
+  animation: BG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BG {
+  from {
+    stroke-dashoffset: 97;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BA {
+  stroke-dasharray: 59;
+  stroke-dashoffset: -59;
+  animation: BA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BA {
+  from {
+    stroke-dashoffset: 59;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BY {
+  stroke-dasharray: 138;
+  stroke-dashoffset: -138;
+  animation: BY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BY {
+  from {
+    stroke-dashoffset: 138;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BZ {
+  stroke-dasharray: 42;
+  stroke-dashoffset: -42;
+  animation: BZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BZ {
+  from {
+    stroke-dashoffset: 42;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BO {
+  stroke-dasharray: 289;
+  stroke-dashoffset: -289;
+  animation: BO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BO {
+  from {
+    stroke-dashoffset: 289;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BR {
+  stroke-dasharray: 940;
+  stroke-dashoffset: -940;
+  animation: BR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BR {
+  from {
+    stroke-dashoffset: 940;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BN {
+  stroke-dasharray: 25;
+  stroke-dashoffset: -25;
+  animation: BN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BN {
+  from {
+    stroke-dashoffset: 25;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BT {
+  stroke-dasharray: 46;
+  stroke-dashoffset: -46;
+  animation: BT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BT {
+  from {
+    stroke-dashoffset: 46;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BW {
+  stroke-dasharray: 190;
+  stroke-dashoffset: -190;
+  animation: BW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BW {
+  from {
+    stroke-dashoffset: 190;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CF {
+  stroke-dasharray: 222;
+  stroke-dashoffset: -222;
+  animation: CF 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CF {
+  from {
+    stroke-dashoffset: 222;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CA {
+  stroke-dasharray: 4209;
+  stroke-dashoffset: -4209;
+  animation: CA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CA {
+  from {
+    stroke-dashoffset: 4209;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CH {
+  stroke-dasharray: 62;
+  stroke-dashoffset: -62;
+  animation: CH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CH {
+  from {
+    stroke-dashoffset: 62;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CL {
+  stroke-dasharray: 690;
+  stroke-dashoffset: -690;
+  animation: CL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CL {
+  from {
+    stroke-dashoffset: 690;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CN {
+  stroke-dasharray: 1254;
+  stroke-dashoffset: -1254;
+  animation: CN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CN {
+  from {
+    stroke-dashoffset: 1254;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CI {
+  stroke-dasharray: 139;
+  stroke-dashoffset: -139;
+  animation: CI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CI {
+  from {
+    stroke-dashoffset: 139;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CM {
+  stroke-dasharray: 216;
+  stroke-dashoffset: -216;
+  animation: CM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CM {
+  from {
+    stroke-dashoffset: 216;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CD {
+  stroke-dasharray: 450;
+  stroke-dashoffset: -450;
+  animation: CD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CD {
+  from {
+    stroke-dashoffset: 450;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CG {
+  stroke-dasharray: 195;
+  stroke-dashoffset: -195;
+  animation: CG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CG {
+  from {
+    stroke-dashoffset: 195;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CO {
+  stroke-dasharray: 358;
+  stroke-dashoffset: -358;
+  animation: CO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CO {
+  from {
+    stroke-dashoffset: 358;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CR {
+  stroke-dasharray: 70;
+  stroke-dashoffset: -70;
+  animation: CR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CR {
+  from {
+    stroke-dashoffset: 70;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CU {
+  stroke-dasharray: 150;
+  stroke-dashoffset: -150;
+  animation: CU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CU {
+  from {
+    stroke-dashoffset: 150;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CZ {
+  stroke-dasharray: 84;
+  stroke-dashoffset: -84;
+  animation: CZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CZ {
+  from {
+    stroke-dashoffset: 84;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DE {
+  stroke-dasharray: 184;
+  stroke-dashoffset: -184;
+  animation: DE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DE {
+  from {
+    stroke-dashoffset: 184;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DJ {
+  stroke-dasharray: 36;
+  stroke-dashoffset: -36;
+  animation: DJ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DJ {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DK {
+  stroke-dasharray: 78;
+  stroke-dashoffset: -78;
+  animation: DK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DK {
+  from {
+    stroke-dashoffset: 78;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DO {
+  stroke-dasharray: 62;
+  stroke-dashoffset: -62;
+  animation: DO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DO {
+  from {
+    stroke-dashoffset: 62;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DZ {
+  stroke-dasharray: 382;
+  stroke-dashoffset: -382;
+  animation: DZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DZ {
+  from {
+    stroke-dashoffset: 382;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#EC {
+  stroke-dasharray: 126;
+  stroke-dashoffset: -126;
+  animation: EC 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes EC {
+  from {
+    stroke-dashoffset: 126;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#EG {
+  stroke-dasharray: 283;
+  stroke-dashoffset: -283;
+  animation: EG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes EG {
+  from {
+    stroke-dashoffset: 283;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ER {
+  stroke-dasharray: 121;
+  stroke-dashoffset: -121;
+  animation: ER 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ER {
+  from {
+    stroke-dashoffset: 121;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#EE {
+  stroke-dasharray: 62;
+  stroke-dashoffset: -62;
+  animation: EE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes EE {
+  from {
+    stroke-dashoffset: 62;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ET {
+  stroke-dasharray: 261;
+  stroke-dashoffset: -261;
+  animation: ET 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ET {
+  from {
+    stroke-dashoffset: 261;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#FI {
+  stroke-dasharray: 212;
+  stroke-dashoffset: -212;
+  animation: FI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes FI {
+  from {
+    stroke-dashoffset: 212;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#FJ {
+  stroke-dasharray: 46;
+  stroke-dashoffset: -46;
+  animation: FJ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes FJ {
+  from {
+    stroke-dashoffset: 46;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GA {
+  stroke-dasharray: 131;
+  stroke-dashoffset: -131;
+  animation: GA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GA {
+  from {
+    stroke-dashoffset: 131;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GB {
+  stroke-dasharray: 242;
+  stroke-dashoffset: -242;
+  animation: GB 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GB {
+  from {
+    stroke-dashoffset: 242;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GE {
+  stroke-dasharray: 90;
+  stroke-dashoffset: -90;
+  animation: GE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GE {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GH {
+  stroke-dasharray: 114;
+  stroke-dashoffset: -114;
+  animation: GH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GH {
+  from {
+    stroke-dashoffset: 114;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GN {
+  stroke-dasharray: 147;
+  stroke-dashoffset: -147;
+  animation: GN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GN {
+  from {
+    stroke-dashoffset: 147;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GM {
+  stroke-dasharray: 39;
+  stroke-dashoffset: -39;
+  animation: GM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GM {
+  from {
+    stroke-dashoffset: 39;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GW {
+  stroke-dasharray: 45;
+  stroke-dashoffset: -45;
+  animation: GW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GW {
+  from {
+    stroke-dashoffset: 45;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GQ {
+  stroke-dasharray: 35;
+  stroke-dashoffset: -35;
+  animation: GQ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GQ {
+  from {
+    stroke-dashoffset: 35;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GR {
+  stroke-dasharray: 183;
+  stroke-dashoffset: -183;
+  animation: GR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GR {
+  from {
+    stroke-dashoffset: 183;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GL {
+  stroke-dasharray: 916;
+  stroke-dashoffset: -916;
+  animation: GL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GL {
+  from {
+    stroke-dashoffset: 916;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GT {
+  stroke-dasharray: 95;
+  stroke-dashoffset: -95;
+  animation: GT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GT {
+  from {
+    stroke-dashoffset: 95;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GY {
+  stroke-dasharray: 130;
+  stroke-dashoffset: -130;
+  animation: GY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GY {
+  from {
+    stroke-dashoffset: 130;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#HN {
+  stroke-dasharray: 94;
+  stroke-dashoffset: -94;
+  animation: HN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes HN {
+  from {
+    stroke-dashoffset: 94;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#HR {
+  stroke-dasharray: 120;
+  stroke-dashoffset: -120;
+  animation: HR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes HR {
+  from {
+    stroke-dashoffset: 120;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#HT {
+  stroke-dasharray: 61;
+  stroke-dashoffset: -61;
+  animation: HT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes HT {
+  from {
+    stroke-dashoffset: 61;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#HU {
+  stroke-dasharray: 84;
+  stroke-dashoffset: -84;
+  animation: HU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes HU {
+  from {
+    stroke-dashoffset: 84;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ID {
+  stroke-dasharray: 1278;
+  stroke-dashoffset: -1278;
+  animation: ID 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ID {
+  from {
+    stroke-dashoffset: 1278;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IN {
+  stroke-dasharray: 735;
+  stroke-dashoffset: -735;
+  animation: IN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IN {
+  from {
+    stroke-dashoffset: 735;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IE {
+  stroke-dasharray: 67;
+  stroke-dashoffset: -67;
+  animation: IE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IE {
+  from {
+    stroke-dashoffset: 67;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IR {
+  stroke-dasharray: 379;
+  stroke-dashoffset: -379;
+  animation: IR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IR {
+  from {
+    stroke-dashoffset: 379;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IQ {
+  stroke-dasharray: 178;
+  stroke-dashoffset: -178;
+  animation: IQ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IQ {
+  from {
+    stroke-dashoffset: 178;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IS {
+  stroke-dasharray: 131;
+  stroke-dashoffset: -131;
+  animation: IS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IS {
+  from {
+    stroke-dashoffset: 131;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IL {
+  stroke-dasharray: 61;
+  stroke-dashoffset: -61;
+  animation: IL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IL {
+  from {
+    stroke-dashoffset: 61;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IT {
+  stroke-dasharray: 259;
+  stroke-dashoffset: -259;
+  animation: IT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IT {
+  from {
+    stroke-dashoffset: 259;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#JM {
+  stroke-dasharray: 26;
+  stroke-dashoffset: -26;
+  animation: JM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes JM {
+  from {
+    stroke-dashoffset: 26;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#JO {
+  stroke-dasharray: 89;
+  stroke-dashoffset: -89;
+  animation: JO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes JO {
+  from {
+    stroke-dashoffset: 89;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#JP {
+  stroke-dasharray: 377;
+  stroke-dashoffset: -377;
+  animation: JP 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes JP {
+  from {
+    stroke-dashoffset: 377;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KZ {
+  stroke-dasharray: 664;
+  stroke-dashoffset: -664;
+  animation: KZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KZ {
+  from {
+    stroke-dashoffset: 664;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KE {
+  stroke-dasharray: 195;
+  stroke-dashoffset: -195;
+  animation: KE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KE {
+  from {
+    stroke-dashoffset: 195;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KG {
+  stroke-dasharray: 165;
+  stroke-dashoffset: -165;
+  animation: KG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KG {
+  from {
+    stroke-dashoffset: 165;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KH {
+  stroke-dasharray: 97;
+  stroke-dashoffset: -97;
+  animation: KH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KH {
+  from {
+    stroke-dashoffset: 97;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KR {
+  stroke-dasharray: 84;
+  stroke-dashoffset: -84;
+  animation: KR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KR {
+  from {
+    stroke-dashoffset: 84;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KW {
+  stroke-dasharray: 32;
+  stroke-dashoffset: -32;
+  animation: KW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KW {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LA {
+  stroke-dasharray: 186;
+  stroke-dashoffset: -186;
+  animation: LA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LA {
+  from {
+    stroke-dashoffset: 186;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LB {
+  stroke-dasharray: 27;
+  stroke-dashoffset: -27;
+  animation: LB 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LB {
+  from {
+    stroke-dashoffset: 27;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LR {
+  stroke-dasharray: 81;
+  stroke-dashoffset: -81;
+  animation: LR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LR {
+  from {
+    stroke-dashoffset: 81;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LY {
+  stroke-dasharray: 330;
+  stroke-dashoffset: -330;
+  animation: LY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LY {
+  from {
+    stroke-dashoffset: 330;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LK {
+  stroke-dasharray: 58;
+  stroke-dashoffset: -58;
+  animation: LK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LK {
+  from {
+    stroke-dashoffset: 58;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LS {
+  stroke-dasharray: 37;
+  stroke-dashoffset: -37;
+  animation: LS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LS {
+  from {
+    stroke-dashoffset: 37;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LT {
+  stroke-dasharray: 68;
+  stroke-dashoffset: -68;
+  animation: LT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LT {
+  from {
+    stroke-dashoffset: 68;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LU {
+  stroke-dasharray: 11;
+  stroke-dashoffset: -11;
+  animation: LU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LU {
+  from {
+    stroke-dashoffset: 11;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LV {
+  stroke-dasharray: 87;
+  stroke-dashoffset: -87;
+  animation: LV 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LV {
+  from {
+    stroke-dashoffset: 87;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MA {
+  stroke-dasharray: 289;
+  stroke-dashoffset: -289;
+  animation: MA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MA {
+  from {
+    stroke-dashoffset: 289;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MD {
+  stroke-dasharray: 60;
+  stroke-dashoffset: -60;
+  animation: MD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MD {
+  from {
+    stroke-dashoffset: 60;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MG {
+  stroke-dasharray: 218;
+  stroke-dashoffset: -218;
+  animation: MG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MG {
+  from {
+    stroke-dashoffset: 218;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MX {
+  stroke-dasharray: 647;
+  stroke-dashoffset: -647;
+  animation: MX 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MX {
+  from {
+    stroke-dashoffset: 647;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MK {
+  stroke-dasharray: 36;
+  stroke-dashoffset: -36;
+  animation: MK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MK {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ML {
+  stroke-dasharray: 341;
+  stroke-dashoffset: -341;
+  animation: ML 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ML {
+  from {
+    stroke-dashoffset: 341;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MM {
+  stroke-dasharray: 335;
+  stroke-dashoffset: -335;
+  animation: MM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MM {
+  from {
+    stroke-dashoffset: 335;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ME {
+  stroke-dasharray: 31;
+  stroke-dashoffset: -31;
+  animation: ME 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ME {
+  from {
+    stroke-dashoffset: 31;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MN {
+  stroke-dasharray: 421;
+  stroke-dashoffset: -421;
+  animation: MN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MN {
+  from {
+    stroke-dashoffset: 421;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MZ {
+  stroke-dasharray: 342;
+  stroke-dashoffset: -342;
+  animation: MZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MZ {
+  from {
+    stroke-dashoffset: 342;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MR {
+  stroke-dasharray: 286;
+  stroke-dashoffset: -286;
+  animation: MR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MR {
+  from {
+    stroke-dashoffset: 286;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MW {
+  stroke-dasharray: 132;
+  stroke-dashoffset: -132;
+  animation: MW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MW {
+  from {
+    stroke-dashoffset: 132;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MY {
+  stroke-dasharray: 260;
+  stroke-dashoffset: -260;
+  animation: MY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MY {
+  from {
+    stroke-dashoffset: 260;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NA {
+  stroke-dasharray: 276;
+  stroke-dashoffset: -276;
+  animation: NA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NA {
+  from {
+    stroke-dashoffset: 276;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NE {
+  stroke-dasharray: 276;
+  stroke-dashoffset: -276;
+  animation: NE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NE {
+  from {
+    stroke-dashoffset: 276;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NG {
+  stroke-dasharray: 224;
+  stroke-dashoffset: -224;
+  animation: NG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NG {
+  from {
+    stroke-dashoffset: 224;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NI {
+  stroke-dasharray: 94;
+  stroke-dashoffset: -94;
+  animation: NI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NI {
+  from {
+    stroke-dashoffset: 94;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NL {
+  stroke-dasharray: 58;
+  stroke-dashoffset: -58;
+  animation: NL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NL {
+  from {
+    stroke-dashoffset: 58;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NO {
+  stroke-dasharray: 526;
+  stroke-dashoffset: -526;
+  animation: NO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NO {
+  from {
+    stroke-dashoffset: 526;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NP {
+  stroke-dasharray: 115;
+  stroke-dashoffset: -115;
+  animation: NP 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NP {
+  from {
+    stroke-dashoffset: 115;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NZ {
+  stroke-dasharray: 313;
+  stroke-dashoffset: -313;
+  animation: NZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NZ {
+  from {
+    stroke-dashoffset: 313;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#OM {
+  stroke-dasharray: 168;
+  stroke-dashoffset: -168;
+  animation: OM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes OM {
+  from {
+    stroke-dashoffset: 168;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PK {
+  stroke-dasharray: 346;
+  stroke-dashoffset: -346;
+  animation: PK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PK {
+  from {
+    stroke-dashoffset: 346;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PA {
+  stroke-dasharray: 114;
+  stroke-dashoffset: -114;
+  animation: PA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PA {
+  from {
+    stroke-dashoffset: 114;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PE {
+  stroke-dasharray: 374;
+  stroke-dashoffset: -374;
+  animation: PE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PE {
+  from {
+    stroke-dashoffset: 374;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PH {
+  stroke-dasharray: 437;
+  stroke-dashoffset: -437;
+  animation: PH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PH {
+  from {
+    stroke-dashoffset: 437;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PG {
+  stroke-dasharray: 340;
+  stroke-dashoffset: -340;
+  animation: PG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PG {
+  from {
+    stroke-dashoffset: 340;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PL {
+  stroke-dasharray: 151;
+  stroke-dashoffset: -151;
+  animation: PL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PL {
+  from {
+    stroke-dashoffset: 151;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KP {
+  stroke-dasharray: 122;
+  stroke-dashoffset: -122;
+  animation: KP 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KP {
+  from {
+    stroke-dashoffset: 122;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PT {
+  stroke-dasharray: 95;
+  stroke-dashoffset: -95;
+  animation: PT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PT {
+  from {
+    stroke-dashoffset: 95;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PY {
+  stroke-dasharray: 171;
+  stroke-dashoffset: -171;
+  animation: PY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PY {
+  from {
+    stroke-dashoffset: 171;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PS {
+  stroke-dasharray: 19;
+  stroke-dashoffset: -19;
+  animation: PS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PS {
+  from {
+    stroke-dashoffset: 19;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#QA {
+  stroke-dasharray: 23;
+  stroke-dashoffset: -23;
+  animation: QA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes QA {
+  from {
+    stroke-dashoffset: 23;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#RO {
+  stroke-dasharray: 135;
+  stroke-dashoffset: -135;
+  animation: RO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes RO {
+  from {
+    stroke-dashoffset: 135;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#RU {
+  stroke-dasharray: 3476;
+  stroke-dashoffset: -3476;
+  animation: RU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes RU {
+  from {
+    stroke-dashoffset: 3476;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#RW {
+  stroke-dasharray: 36;
+  stroke-dashoffset: -36;
+  animation: RW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes RW {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#EH {
+  stroke-dasharray: 163;
+  stroke-dashoffset: -163;
+  animation: EH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes EH {
+  from {
+    stroke-dashoffset: 163;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SA {
+  stroke-dasharray: 366;
+  stroke-dashoffset: -366;
+  animation: SA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SA {
+  from {
+    stroke-dashoffset: 366;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SD {
+  stroke-dasharray: 362;
+  stroke-dashoffset: -362;
+  animation: SD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SD {
+  from {
+    stroke-dashoffset: 362;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SS {
+  stroke-dasharray: 222;
+  stroke-dashoffset: -222;
+  animation: SS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SS {
+  from {
+    stroke-dashoffset: 222;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SN {
+  stroke-dasharray: 137;
+  stroke-dashoffset: -137;
+  animation: SN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SN {
+  from {
+    stroke-dashoffset: 137;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SL {
+  stroke-dasharray: 59;
+  stroke-dashoffset: -59;
+  animation: SL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SL {
+  from {
+    stroke-dashoffset: 59;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SV {
+  stroke-dasharray: 35;
+  stroke-dashoffset: -35;
+  animation: SV 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SV {
+  from {
+    stroke-dashoffset: 35;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#RS {
+  stroke-dasharray: 90;
+  stroke-dashoffset: -90;
+  animation: RS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes RS {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SR {
+  stroke-dasharray: 91;
+  stroke-dashoffset: -91;
+  animation: SR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SR {
+  from {
+    stroke-dashoffset: 91;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SK {
+  stroke-dasharray: 68;
+  stroke-dashoffset: -68;
+  animation: SK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SK {
+  from {
+    stroke-dashoffset: 68;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SI {
+  stroke-dasharray: 42;
+  stroke-dashoffset: -42;
+  animation: SI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SI {
+  from {
+    stroke-dashoffset: 42;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SE {
+  stroke-dasharray: 231;
+  stroke-dashoffset: -231;
+  animation: SE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SE {
+  from {
+    stroke-dashoffset: 231;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SZ {
+  stroke-dasharray: 28;
+  stroke-dashoffset: -28;
+  animation: SZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SZ {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SY {
+  stroke-dasharray: 113;
+  stroke-dashoffset: -113;
+  animation: SY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SY {
+  from {
+    stroke-dashoffset: 113;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TD {
+  stroke-dasharray: 298;
+  stroke-dashoffset: -298;
+  animation: TD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TD {
+  from {
+    stroke-dashoffset: 298;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TG {
+  stroke-dasharray: 76;
+  stroke-dashoffset: -76;
+  animation: TG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TG {
+  from {
+    stroke-dashoffset: 76;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TH {
+  stroke-dasharray: 308;
+  stroke-dashoffset: -308;
+  animation: TH 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TH {
+  from {
+    stroke-dashoffset: 308;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TJ {
+  stroke-dasharray: 153;
+  stroke-dashoffset: -153;
+  animation: TJ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TJ {
+  from {
+    stroke-dashoffset: 153;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TM {
+  stroke-dasharray: 255;
+  stroke-dashoffset: -255;
+  animation: TM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TM {
+  from {
+    stroke-dashoffset: 255;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TL {
+  stroke-dasharray: 32;
+  stroke-dashoffset: -32;
+  animation: TL 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TL {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TN {
+  stroke-dasharray: 122;
+  stroke-dashoffset: -122;
+  animation: TN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TN {
+  from {
+    stroke-dashoffset: 122;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TR {
+  stroke-dasharray: 312;
+  stroke-dashoffset: -312;
+  animation: TR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TR {
+  from {
+    stroke-dashoffset: 312;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TW {
+  stroke-dasharray: 47;
+  stroke-dashoffset: -47;
+  animation: TW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TW {
+  from {
+    stroke-dashoffset: 47;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#TZ {
+  stroke-dasharray: 241;
+  stroke-dashoffset: -241;
+  animation: TZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes TZ {
+  from {
+    stroke-dashoffset: 241;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#UG {
+  stroke-dasharray: 115;
+  stroke-dashoffset: -115;
+  animation: UG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes UG {
+  from {
+    stroke-dashoffset: 115;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#UA {
+  stroke-dasharray: 308;
+  stroke-dashoffset: -308;
+  animation: UA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes UA {
+  from {
+    stroke-dashoffset: 308;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#UY {
+  stroke-dasharray: 96;
+  stroke-dashoffset: -96;
+  animation: UY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes UY {
+  from {
+    stroke-dashoffset: 96;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#US {
+  stroke-dasharray: 2126;
+  stroke-dashoffset: -2126;
+  animation: US 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes US {
+  from {
+    stroke-dashoffset: 2126;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#UZ {
+  stroke-dasharray: 296;
+  stroke-dashoffset: -296;
+  animation: UZ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes UZ {
+  from {
+    stroke-dashoffset: 296;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#VE {
+  stroke-dasharray: 336;
+  stroke-dashoffset: -336;
+  animation: VE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes VE {
+  from {
+    stroke-dashoffset: 336;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#VN {
+  stroke-dasharray: 274;
+  stroke-dashoffset: -274;
+  animation: VN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes VN {
+  from {
+    stroke-dashoffset: 274;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#VU {
+  stroke-dasharray: 29;
+  stroke-dashoffset: -29;
+  animation: VU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes VU {
+  from {
+    stroke-dashoffset: 29;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#YE {
+  stroke-dasharray: 169;
+  stroke-dashoffset: -169;
+  animation: YE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes YE {
+  from {
+    stroke-dashoffset: 169;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ZA {
+  stroke-dasharray: 372;
+  stroke-dashoffset: -372;
+  animation: ZA 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ZA {
+  from {
+    stroke-dashoffset: 372;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ZM {
+  stroke-dasharray: 267;
+  stroke-dashoffset: -267;
+  animation: ZM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ZM {
+  from {
+    stroke-dashoffset: 267;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ZW {
+  stroke-dasharray: 140;
+  stroke-dashoffset: -140;
+  animation: ZW 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ZW {
+  from {
+    stroke-dashoffset: 140;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SO {
+  stroke-dasharray: 279;
+  stroke-dashoffset: -279;
+  animation: SO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SO {
+  from {
+    stroke-dashoffset: 279;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GF {
+  stroke-dasharray: 67;
+  stroke-dashoffset: -67;
+  animation: GF 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GF {
+  from {
+    stroke-dashoffset: 67;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#FR {
+  stroke-dasharray: 249;
+  stroke-dashoffset: -249;
+  animation: FR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes FR {
+  from {
+    stroke-dashoffset: 249;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#ES {
+  stroke-dasharray: 244;
+  stroke-dashoffset: -244;
+  animation: ES 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes ES {
+  from {
+    stroke-dashoffset: 244;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AD {
+  stroke-dasharray: 4;
+  stroke-dashoffset: -4;
+  animation: AD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AD {
+  from {
+    stroke-dashoffset: 4;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#AG {
+  stroke-dasharray: 6;
+  stroke-dashoffset: -6;
+  animation: AG 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes AG {
+  from {
+    stroke-dashoffset: 6;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BS {
+  stroke-dasharray: 144;
+  stroke-dashoffset: -144;
+  animation: BS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BS {
+  from {
+    stroke-dashoffset: 144;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#BB {
+  stroke-dasharray: 4;
+  stroke-dashoffset: -4;
+  animation: BB 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes BB {
+  from {
+    stroke-dashoffset: 4;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KM {
+  stroke-dasharray: 16;
+  stroke-dashoffset: -16;
+  animation: KM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KM {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CV {
+  stroke-dasharray: 37;
+  stroke-dashoffset: -37;
+  animation: CV 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CV {
+  from {
+    stroke-dashoffset: 37;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#DM {
+  stroke-dasharray: 6;
+  stroke-dashoffset: -6;
+  animation: DM 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes DM {
+  from {
+    stroke-dashoffset: 6;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#FK {
+  stroke-dasharray: 70;
+  stroke-dashoffset: -70;
+  animation: FK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes FK {
+  from {
+    stroke-dashoffset: 70;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#FO {
+  stroke-dasharray: 20;
+  stroke-dashoffset: -20;
+  animation: FO 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes FO {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GD {
+  stroke-dasharray: 4;
+  stroke-dashoffset: -4;
+  animation: GD 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GD {
+  from {
+    stroke-dashoffset: 4;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#HK {
+  stroke-dasharray: 12;
+  stroke-dashoffset: -12;
+  animation: HK 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes HK {
+  from {
+    stroke-dashoffset: 12;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#KN {
+  stroke-dasharray: 5;
+  stroke-dashoffset: -5;
+  animation: KN 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes KN {
+  from {
+    stroke-dashoffset: 5;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LC {
+  stroke-dasharray: 5;
+  stroke-dashoffset: -5;
+  animation: LC 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LC {
+  from {
+    stroke-dashoffset: 5;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#LI {
+  stroke-dasharray: 3;
+  stroke-dashoffset: -3;
+  animation: LI 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes LI {
+  from {
+    stroke-dashoffset: 3;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MV {
+  stroke-dasharray: 2;
+  stroke-dashoffset: -2;
+  animation: MV 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MV {
+  from {
+    stroke-dashoffset: 2;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MT {
+  stroke-dasharray: 5;
+  stroke-dashoffset: -5;
+  animation: MT 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MT {
+  from {
+    stroke-dashoffset: 5;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MS {
+  stroke-dasharray: 1;
+  stroke-dashoffset: -1;
+  animation: MS 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MS {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MU {
+  stroke-dasharray: 9;
+  stroke-dashoffset: -9;
+  animation: MU 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MU {
+  from {
+    stroke-dashoffset: 9;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#NC {
+  stroke-dasharray: 67;
+  stroke-dashoffset: -67;
+  animation: NC 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes NC {
+  from {
+    stroke-dashoffset: 67;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#PR {
+  stroke-dasharray: 28;
+  stroke-dashoffset: -28;
+  animation: PR 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes PR {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#SB {
+  stroke-dasharray: 167;
+  stroke-dashoffset: -167;
+  animation: SB 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes SB {
+  from {
+    stroke-dashoffset: 167;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#VC {
+  stroke-dasharray: 5;
+  stroke-dashoffset: -5;
+  animation: VC 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes VC {
+  from {
+    stroke-dashoffset: 5;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#CY {
+  stroke-dasharray: 32;
+  stroke-dashoffset: -32;
+  animation: CY 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes CY {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#RE {
+  stroke-dasharray: 10;
+  stroke-dashoffset: -10;
+  animation: RE 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes RE {
+  from {
+    stroke-dashoffset: 10;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#MQ {
+  stroke-dasharray: 8;
+  stroke-dashoffset: -8;
+  animation: MQ 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes MQ {
+  from {
+    stroke-dashoffset: 8;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#GP {
+  stroke-dasharray: 14;
+  stroke-dashoffset: -14;
+  animation: GP 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes GP {
+  from {
+    stroke-dashoffset: 14;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#IC {
+  stroke-dasharray: 54;
+  stroke-dashoffset: -54;
+  animation: IC 2s linear 0s forwards, baseColor 1s linear 2s both;
+}
+
+@keyframes IC {
+  from {
+    stroke-dashoffset: 54;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes baseColor {
+  from {
+    fill: #ffffff;
+    stroke: #000000;
+    stroke-linejoin: round;
+  }
+  to {
+    fill: #f2f2f2;
+    stroke: #000000;
+    stroke-linejoin: round;
+  }
+}

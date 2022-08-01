@@ -1,0 +1,135 @@
+#korea_dot {
+  opacity: 0;
+  animation: dot_appear 1s linear 0.5s forwards;
+}
+
+#japan_dot {
+  opacity: 0;
+  animation: dot_appear 1s linear 1s forwards;
+}
+
+#china_dot {
+  opacity: 0;
+  animation: dot_appear 1s linear 0s forwards;
+}
+
+#malaysia_dot_1,
+#malaysia_dot_2 {
+  opacity: 0;
+  animation: dot_appear 1s linear 1.5s forwards;
+}
+
+@keyframes dot_appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#korea_line {
+  stroke-dasharray: 437;
+  stroke-dashoffset: -437;
+  animation: korea_line_appear 1s linear 2.5s forwards;
+}
+
+@keyframes korea_line_appear {
+  from {
+    stroke-dashoffset: 437;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#japan_line {
+  stroke-dasharray: 398;
+  stroke-dashoffset: -398;
+  animation: japan_line_appear 1s linear 2.5s forwards;
+}
+
+@keyframes japan_line_appear {
+  from {
+    stroke-dashoffset: 398;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#china_line {
+  stroke-dasharray: 574;
+  stroke-dashoffset: -574;
+  animation: china_line_appear 1s linear 2.5s forwards;
+}
+
+@keyframes china_line_appear {
+  from {
+    stroke-dashoffset: 574;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#malaysia_line_1 {
+  stroke-dasharray: 616;
+  stroke-dashoffset: -616;
+  animation: malaysia_line_1_appear 1s linear 2.5s forwards;
+}
+
+@keyframes malaysia_line_1_appear {
+  from {
+    stroke-dashoffset: 616;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#malaysia_line_2 {
+  stroke-dasharray: 649;
+  stroke-dashoffset: -649;
+  animation: malaysia_line_2_appear 1s linear 2.5s forwards;
+}
+
+@keyframes malaysia_line_2_appear {
+  from {
+    stroke-dashoffset: 649;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#korea_container,
+#japan_container {
+  width: 0;
+  fill: black;
+  animation: right_container_appear 1s linear 3.5s forwards;
+}
+
+@keyframes right_container_appear {
+  from {
+    width: 0;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+#china_container_cover,
+#malaysia_container_cover {
+  fill: white;
+  animation: left_container_appear 1s linear 3.5s forwards;
+}
+
+@keyframes left_container_appear {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 0px;
+  }
+}
