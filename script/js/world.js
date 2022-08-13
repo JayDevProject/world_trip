@@ -35,15 +35,15 @@ function land_disappear(land) {
 
 function select_land(moveTo, land) {
   gsap.to(svg, {
-    duration: 2.5,
-    attr: { viewBox: moveTo },
     ease: "power2.inOut",
+    duration: 2,
+    attr: { viewBox: moveTo },
   });
   svg.style.pointerEvents = "none";
 
   setTimeout(() => {
     location.href = land;
-  }, 3000);
+  }, 2500);
 }
 
 const island = [asia, europe, oceania, africa, northAmerica, southAmerica];
