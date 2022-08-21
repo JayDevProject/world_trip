@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes"
+    />
+    <link rel="stylesheet" href="/css/login_background.css" />
+    <link rel="stylesheet" href="/css/loginHelp_style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="logo">
+      <a href="/">TRIP</a>
+    </div>
+    <div id="container" class="helpContainer">
+      <div class="form_container">
+        <h2>아이디 / 비밀번호를 잊으셨나요?</h2>
+        <form method="POST">
+          <div class="radio_container">
+            <div id="findId_radio" class="radio">
+              <input
+                type="radio"
+                id="findId"
+                value="findId"
+                name="find"
+                checked
+              />
+              <label for="findId">아이디 찾기</label>
+            </div>
+            <div id="findPwd_radio" class="radio">
+              <input
+                type="radio"
+                id="findPassword"
+                value="findPassword"
+                name="find"
+              />
+              <label for="findPassword">비밀번호 찾기</label>
+            </div>
+          </div>
+          <div class="findContainer">
+            <label for="find">이메일</label>
+            <input id="find" type="email" name="email" placeholder="email" />
+          </div>
+          <button>확인</button>
+        </form>
+      </div>
+    </div>
+    <%- include('script.ejs') %>
+  </body>
+</html>

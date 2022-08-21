@@ -1,16 +1,18 @@
-const error = document.querySelectorAll(".error");
+const account_error = document.querySelectorAll(".error");
 
-const userId_errorMsg = document.getElementById("userId_errorMsg");
-const pwd_errorMsg = document.getElementById("pwd_errorMsg");
-const pwd_check_errorMsg = document.getElementById("pwd_check_errorMsg");
-const nickname_errorMsg = document.getElementById("nickname_errorMsg");
-const email_errorMsg = document.getElementById("email_errorMsg");
+const userId_errorMsg = document.getElementById("account_userId_errorMsg");
+const pwd_errorMsg = document.getElementById("account_pwd_errorMsg");
+const pwd_check_errorMsg = document.getElementById(
+  "account_pwd_check_errorMsg"
+);
+const nickname_errorMsg = document.getElementById("account_nickname_errorMsg");
+const email_errorMsg = document.getElementById("account_email_errorMsg");
 
 const error_id = new Map();
 const error_value = new Map();
 let count = 0;
 
-error.forEach((i, idx) => {
+account_error.forEach((i, idx) => {
   error_id[idx] = i.id;
   error_value[idx] = i.value;
   count++;
@@ -66,7 +68,7 @@ function exist_msg(list, type, value) {
         nickname_errorMsg.style.visibility = "visible";
         break;
       case "email":
-        email_errorMsg.innerText = "가입된 이메일입니다.";
+        email_errorMsg.innerText = "이미 가입된 이메일입니다.";
         email_errorMsg.style.visibility = "visible";
         break;
     }

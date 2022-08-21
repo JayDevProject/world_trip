@@ -1,4 +1,4 @@
-import gsap from "./gsap/all.js";
+import gsap from "/node_modules/gsap/all.js";
 
 const svg = document.querySelector("svg");
 const asia = document.querySelectorAll(".asia");
@@ -42,7 +42,7 @@ function select_land(moveTo, land) {
   svg.style.pointerEvents = "none";
 
   setTimeout(() => {
-    location.href = land;
+    location.href = `/world/${land}`;
   }, 2500);
 }
 

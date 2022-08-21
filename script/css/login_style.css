@@ -1,5 +1,8 @@
 .loginContainer {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 500px;
   background-color: rgba(128, 128, 128, 0.2);
@@ -13,15 +16,20 @@ p {
 }
 
 .loginForm {
-  height: 400px;
+  position: absolute;
+  top: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+}
+
+.loginForm > span {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .loginInput {
-  margin: 5px 0 10px 0;
+  margin: 15px 0 2px 0;
   width: 250px;
   height: 30px;
   border-radius: 5px;
@@ -42,12 +50,12 @@ a {
 
 .login_helper {
   font-size: 12px;
-  bottom: 40%;
+  bottom: 30%;
   left: 52%;
 }
 
 .account {
   font-size: 15px;
   left: 20%;
-  bottom: 30%;
+  bottom: 20%;
 }

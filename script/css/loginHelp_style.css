@@ -1,0 +1,56 @@
+.logo {
+  position: absolute;
+}
+
+.logo > a {
+  text-decoration: none;
+  color: white;
+  font-size: 80px;
+  font-family: "Great Vibes";
+  margin-left: 20px;
+}
+
+.helpContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 300px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 20px;
+  color: white;
+}
+
+.form_container {
+  position: absolute;
+  width: 400px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.radio > input,
+.radio > label {
+  position: relative;
+  left: 10%;
+}
+
+.radio > input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+.findContainer {
+  margin-top: 20px;
+}
+
+.findContainer > input {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+}

@@ -1,20 +1,87 @@
 import bcrypt from "bcrypt";
 import User from "../../database/User.js";
 
-export const login = (req, res) => {
-  res.render("login/login.ejs");
+export const getLogin = (req, res) => {
+  res.render("ejs/login/login.ejs");
+};
+
+export const postLogin = async (req, res) => {
+  const login_value = req.body;
+  const login_list = Object.keys(login_value);
+  let login_error = false,
+    userId_loginError = { code: "", error: false },
+    password_loginError = { code: "", error: false };
+
+  for (let i = 0; i < login_list.length; i++) {
+    let value = login_value[login_list[i]];
+    login_null(login_list[i], value);
+  }
+
+  function login_null(list, value) {
+    if (value === "") {
+      switch (list) {
+        case "login_userId":
+          login_error = true;
+          userId_loginError.code = "userId_loginNull";
+          userId_loginError.error = true;
+          break;
+        case "login_password":
+          login_error = true;
+          password_loginError.code = "pwd_loginNull";
+          password_loginError.error = true;
+          break;
+      }
+    }
+    return;
+  }
+
+  const login_userInfo = await User.findOne({
+    userId: login_value.login_userId,
+  });
+
+  if (login_userInfo && password_loginError.code !== "pwd_loginNull") {
+    const pwd_inspect = await bcrypt.compare(
+      login_value.login_password,
+      login_userInfo.password
+    );
+
+    if (!pwd_inspect) {
+      login_error = true;
+      password_loginError.code = "pwd_noMatch";
+      password_loginError.error = true;
+    }
+  }
+
+  let login_info = [
+    {
+      id: userId_loginError.code,
+      class: "error",
+      error: userId_loginError.error,
+    },
+    {
+      id: password_loginError.code,
+      class: "error",
+      error: password_loginError.error,
+    },
+  ];
+
+  if (login_error) {
+    return res.render("ejs/login/login.ejs", { login_info });
+  } else {
+    // 세계맵으로 넘어가야됨.
+  }
 };
 
 export const getAccount = (req, res) => {
-  res.render("login/account.ejs");
+  res.render("ejs/login/account.ejs");
 };
 
 export const postAccount = async (req, res) => {
   const { password, password_check } = req.body;
-  const account_obj = req.body;
-  const account_list = Object.keys(account_obj);
+  const account_value = req.body;
+  const account_list = Object.keys(account_value);
   let encodingPassword = "",
-    error = false,
+    account_error = false,
     userId_error = { code: "", error: false },
     pwd_error = { code: "", error: false },
     pwdCheck_error = { code: "", error: false },
@@ -24,42 +91,42 @@ export const postAccount = async (req, res) => {
   if (password === password_check) {
     encodingPassword = await bcrypt.hash(password, 5);
   } else {
-    error = true;
+    account_error = true;
     pwdCheck_error.code = "pwdCheck_noMatch";
     pwdCheck_error.error = true;
   }
 
   for (let i = 0; i < account_list.length; i++) {
-    let account_value = account_obj[account_list[i]];
-    error_null(account_list[i], account_value);
-    error_exist(account_list[i], account_value);
+    let value = account_value[account_list[i]];
+    error_null(account_list[i], value);
+    error_exist(account_list[i], value);
   }
 
   function error_null(list, value) {
     if (value === "") {
       switch (list) {
         case "userId":
-          error = true;
+          account_error = true;
           userId_error.code = "userId_null";
           userId_error.error = true;
           break;
         case "password":
-          error = true;
+          account_error = true;
           pwd_error.code = "pwd_null";
           pwd_error.error = true;
           break;
         case "password_check":
-          error = true;
+          account_error = true;
           pwdCheck_error.code = "pwdCheck_null";
           pwdCheck_error.error = true;
           break;
         case "nickname":
-          error = true;
+          account_error = true;
           nickname_error.code = "nickname_null";
           nickname_error.error = true;
           break;
         case "email":
-          error = true;
+          account_error = true;
           email_error.code = "email_null";
           email_error.error = true;
           break;
@@ -76,17 +143,17 @@ export const postAccount = async (req, res) => {
     ) {
       switch (list) {
         case "userId":
-          error = true;
+          account_error = true;
           userId_error.code = "userId_exist";
           userId_error.error = true;
           break;
         case "nickname":
-          error = true;
+          account_error = true;
           nickname_error.code = "nickname_exist";
           nickname_error.error = true;
           break;
         case "email":
-          error = true;
+          account_error = true;
           email_error.code = "email_exist";
           email_error.error = true;
           break;
@@ -95,7 +162,7 @@ export const postAccount = async (req, res) => {
     return;
   }
 
-  let info = [
+  let account_info = [
     { id: userId_error.code, class: "error", error: userId_error.error },
     { id: pwd_error.code, class: "error", error: pwd_error.error },
     { id: pwdCheck_error.code, class: "error", error: pwdCheck_error.error },
@@ -103,41 +170,42 @@ export const postAccount = async (req, res) => {
     { id: email_error.code, class: "error", error: email_error.error },
   ];
 
-  /*
-  if(error === false) {
+  if (account_error === false) {
     await User.create({
-      userId,
+      userId: account_value.userId,
       password: encodingPassword,
-      nickname,
-      email,
+      nickname: account_value.nickname,
+      email: account_value.email,
     });
     return res.redirect("/");
   } else {
-    return res.render("login/account.ejs", { pwd_noSame });
-  }
-*/
-
-  if (error) {
-    return res.render("login/account.ejs", {
-      info,
-    });
+    return res.render("ejs/login/account.ejs", { account_info });
   }
 };
 
 export const getLoginHelp = (req, res) => {
-  res.render("login/loginHelp.ejs");
+  res.render("ejs/login/loginHelp.ejs");
 };
 
-export const postLoginHelp = (req, res) => {};
+export const postLoginHelp = async (req, res) => {
+  const { find, email } = req.body;
 
-export const world = (req, res) => {
-  res.render("worldmap/world.ejs");
+  const emailExist = await User.exists({ email });
+
+  if (emailExist) {
+    switch (find) {
+      case "findId":
+        const findId = await User.findOne({ email });
+        return res.render("/");
+      case "findPassword":
+        const findPassword = await User.findOne({ email });
+        return res.render("/");
+    }
+  } else {
+    return res.render("ejs/login/loginHelp.ejs");
+  }
 };
 
-export const asia_land = (req, res) => {
-  res.render("worldmap/asia.ejs");
-};
-
-export const europe_land = (req, res) => {
-  res.render("worldmap/europe.ejs");
+export const getCommunity = (req, res) => {
+  res.render("pug/community");
 };
