@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../../database/User.js";
+import "express-session";
 
 export const getLogin = (req, res) => {
   res.render("ejs/login/login.ejs");
@@ -12,6 +13,8 @@ export const postLogin = async (req, res) => {
     userId_loginError = { code: "", error: false },
     password_loginError = { code: "", error: false };
 
+  // 아이디와 비밀번호의 name 값과 value 를 각각 전달.
+  // name 은 switch 구문에서 구별하는 용도로 사용
   for (let i = 0; i < login_list.length; i++) {
     let value = login_value[login_list[i]];
     login_null(login_list[i], value);
@@ -39,7 +42,9 @@ export const postLogin = async (req, res) => {
     userId: login_value.login_userId,
   });
 
-  if (login_userInfo && password_loginError.code !== "pwd_loginNull") {
+  // 입력한 로그인 유저 정보가 있고, 비밀번호 값이 null 이 아닌 경우 유효성 검사
+  // 비밀번호가 일치하지 않을 경우 에러
+  if (login_userInfo && !password_loginError.error) {
     const pwd_inspect = await bcrypt.compare(
       login_value.login_password,
       login_userInfo.password
@@ -68,7 +73,10 @@ export const postLogin = async (req, res) => {
   if (login_error) {
     return res.render("ejs/login/login.ejs", { login_info });
   } else {
-    // 세계맵으로 넘어가야됨.
+    // 로그인 정보 저장
+    req.session.userId = login_userInfo._id;
+    req.session.nickname = login_userInfo.nickname;
+    return res.redirect("/world");
   }
 };
 
@@ -88,6 +96,7 @@ export const postAccount = async (req, res) => {
     nickname_error = { code: "", error: false },
     email_error = { code: "", error: false };
 
+  // 비밀번호 유효성 검사
   if (password === password_check) {
     encodingPassword = await bcrypt.hash(password, 5);
   } else {

@@ -22,7 +22,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const loader = new GLTFLoader();
-loader.load("earth/scene.gltf", (gltf) => {
+loader.load("/file/earth/scene.gltf", (gltf) => {
   scene.add(gltf.scene);
 
   function animate() {

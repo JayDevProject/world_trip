@@ -1,5 +1,5 @@
 const frame = document.querySelector(".frame");
-const data = ["/landmark/namsanTower.jpg", "/landmark/1.jpg"];
+const data = ["/file/landmark/namsanTower.jpg", "/file/landmark/1.jpg"];
 let imageCount = 0;
 
 data.forEach((img) => appendCard(img));
@@ -74,3 +74,10 @@ function setTransform(x, y, deg, duration) {
   current.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${deg}deg)`;
   if (duration) current.style.transition = `transform ${duration}ms`;
 }
+
+// 업로드 클릭 시
+const upload = document.querySelector(".upload");
+
+upload.addEventListener("click", () => {
+  location.href = "/world/upload";
+});
