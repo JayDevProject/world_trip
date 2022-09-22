@@ -2,24 +2,24 @@ import Image from "../../database/image.js";
 import "express-session";
 
 export const world = (req, res) => {
-  res.render("ejs/worldmap/world.ejs");
+  res.render("ejs/world/world.ejs");
 };
 
 export const asia_land = (req, res) => {
-  res.render("ejs/worldmap/asia.ejs");
+  res.render("ejs/world/asia.ejs");
 };
 
 export const korea = (req, res) => {
   console.log(req.originalUrl);
-  res.render("pug/country/korea");
+  res.render("pug/album/korea");
 };
 
 export const europe_land = (req, res) => {
-  res.render("ejs/worldmap/europe.ejs");
+  res.render("ejs/world/europe.ejs");
 };
 
 export const getUpload = (req, res) => {
-  res.render("pug/upload");
+  res.render("pug/album/upload");
 };
 
 export const postUpload = async (req, res) => {

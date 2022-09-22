@@ -214,7 +214,3 @@ export const postLoginHelp = async (req, res) => {
     return res.render("ejs/login/loginHelp.ejs");
   }
 };
-
-export const getCommunity = (req, res) => {
-  res.render("pug/community");
-};
