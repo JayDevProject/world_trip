@@ -22,30 +22,6 @@ function info_appear() {
   info_text.style.animation = "font_show 0.5s linear forwards";
 }
 
-function land_disappear(land) {
-  island.forEach((country) => {
-    for (let n = 0; n < country.length; n++) {
-      const className = String(country[n].className.baseVal);
-      if (className.includes(land) === false) {
-        country[n].style.animation = "land_disappear 1s linear forwards";
-      }
-    }
-  });
-}
-
-function select_land(moveTo, land) {
-  gsap.to(svg, {
-    ease: "power2.inOut",
-    duration: 2,
-    attr: { viewBox: moveTo },
-  });
-  svg.style.pointerEvents = "none";
-
-  setTimeout(() => {
-    location.href = `/world/${land}`;
-  }, 2500);
-}
-
 const island = [asia, europe, oceania, africa, northAmerica, southAmerica];
 
 // 3초 동안 이벤트 발생을 막기 위한 함수
@@ -90,40 +66,29 @@ setTimeout(() => {
       });
 
       country[i].addEventListener("click", () => {
-        for (let k = 0; k < country.length; k++) {
-          const classExist = country[k].className.baseVal;
-          let move = "";
+        for (let j = 0; j < country.length; j++) {
+          country[j].classList.remove("st0");
+
+          const classExist = country[j].className.baseVal;
 
           switch (classExist) {
             case "asia":
-              move = "420 -140 2000 1001";
-              select_land(move, "asia");
-              land_disappear("asia");
+              location.href = "/world/asia";
               break;
             case "europe":
-              move = "50 -280 2000 1001";
-              select_land(move, "europe");
-              land_disappear("europe");
+              location.href = "/world/europe";
               break;
             case "oceania":
-              move = "780 230 2000 1001";
-              select_land(move, "oceania");
-              land_disappear("oceania");
+              location.href = "/world/oceania";
               break;
             case "africa":
-              move = "70 60 2000 1001";
-              select_land(move, "africa");
-              land_disappear("africa");
+              location.href = "/world/africa";
               break;
             case "northAmerica":
-              move = "-480 -190 2000 1001";
-              select_land(move, "northAmerica");
-              land_disappear("northAmerica");
+              location.href = "/world/north-america";
               break;
             case "southAmerica":
-              move = "-345 210 2000 1001";
-              select_land(move, "southAmerica");
-              land_disappear("southAmerica");
+              location.href = "/world/south-america";
               break;
           }
         }

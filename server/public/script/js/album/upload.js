@@ -32,6 +32,7 @@ const upload_submitButton = document.querySelector(".upload_submitButton");
 let image_array = [];
 let count = 0;
 
+// input 값에 file 이 입력될 경우
 hidden_uploadFile_input.addEventListener("change", (event) => {
   const new_imageFiles = new Array(...event.target.files);
   new_imageFiles.map((i) => image_array.push(i));
@@ -40,6 +41,7 @@ hidden_uploadFile_input.addEventListener("change", (event) => {
   setButton(image_array.length, count);
 });
 
+// 이미지 삭제
 del_button.addEventListener("click", () => {
   image_array.splice(count, 1);
   const arrLength = image_array.length;
@@ -57,12 +59,14 @@ del_button.addEventListener("click", () => {
   setButton(arrLength, count);
 });
 
+// 좌측 버튼
 left_button.addEventListener("click", () => {
   count--;
   readFile(image_array[count]);
   setButton(image_array.length, count);
 });
 
+// 우측 버튼
 right_button.addEventListener("click", () => {
   count++;
   readFile(image_array[count]);

@@ -33,5 +33,5 @@ app.use("/script", express.static("server/public/script"));
 app.use("/file", express.static("server/public/file"));
 
 app.listen(4000, () => {
-  console.log("Welcome to world_trip!");
+  console.log("Welcome to trip!");
 });

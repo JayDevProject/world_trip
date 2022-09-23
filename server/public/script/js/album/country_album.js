@@ -79,5 +79,6 @@ function setTransform(x, y, deg, duration) {
 const upload = document.querySelector(".upload");
 
 upload.addEventListener("click", () => {
-  location.href = "/world/upload";
+  const url = window.location.href;
+  location.href = `${url}/upload`;
 });
