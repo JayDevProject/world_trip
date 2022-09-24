@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import multer from "multer";
 import {
   world,
@@ -11,11 +12,10 @@ import {
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (file.originalname.match(/\.(jpg|jpeg|png|svg)$/)) {
-      console.log("before");
-      cb(null, "/file/upload/image/");
-      console.log("after");
+      // 절대경로로 변경
+      cb(null, path.join(process.cwd(), "/server/public/file/upload/image"));
     } else if (file.originalname.match(/\.(mp4|glf)$/)) {
-      cb(null, "/file/upload/video/");
+      cb(null, path.join(process.cwd(), "/server/public/file/upload/video/"));
     }
   },
   filename: function (req, file, cb) {
