@@ -6,45 +6,11 @@ export const world = (req, res) => {
 };
 
 export const land = (req, res) => {
-  const {
-    params: { id },
-  } = req;
-
-  const island = [
-    "asia",
-    "europe",
-    "africa",
-    "oceania",
-    "north-america",
-    "south-america",
-  ];
-
-  if (island.includes(id)) {
-    res.render("pug/album/album.pug");
-  } else {
-    res.render("pug/error/404.pug");
-  }
+  res.render("pug/album/album.pug");
 };
 
 export const getUpload = (req, res) => {
-  const {
-    params: { id },
-  } = req;
-
-  const island = [
-    "asia",
-    "europe",
-    "africa",
-    "oceania",
-    "north-america",
-    "south-america",
-  ];
-
-  if (island.includes(id)) {
-    res.render("pug/album/upload.pug");
-  } else {
-    res.render("pug/error/404.pug");
-  }
+  res.render("pug/album/upload.pug");
 };
 
 export const postUpload = async (req, res) => {

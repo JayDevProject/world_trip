@@ -7,6 +7,8 @@ import {
   getUpload,
   postUpload,
 } from "../controllers/worldController.js";
+import { login_inspect } from "../middlewares/loginMiddleware.js";
+import { continent } from "../middlewares/worldMiddleware.js";
 
 // 확장자에 따른 저장 폴더 구분 및 이름 변경
 const storage = multer.diskStorage({
@@ -26,12 +28,12 @@ const upload = multer({ storage: storage });
 
 const worldRouter = express.Router();
 
-worldRouter.get("/", world);
-worldRouter.get("/:id", land);
+worldRouter.get("/", login_inspect, world);
+worldRouter.get("/:id", login_inspect, continent, land);
 
 worldRouter
   .route("/:id/upload")
-  .get(getUpload)
+  .get(login_inspect, continent, getUpload)
   .post(upload.array("upload_file"), postUpload);
 
 export default worldRouter;

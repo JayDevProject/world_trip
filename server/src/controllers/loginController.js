@@ -76,6 +76,9 @@ export const postLogin = async (req, res) => {
     // 로그인 정보 저장
     req.session.userId = login_userInfo._id;
     req.session.nickname = login_userInfo.nickname;
+    if (req.session.url) {
+      return res.redirect(req.session.url);
+    }
     return res.redirect("/world");
   }
 };
