@@ -7,6 +7,7 @@ import {
   getLoginHelp,
   postLoginHelp,
 } from "../controllers/loginController.js";
+import { email } from "../middlewares/loginMiddleware.js";
 
 const loginRouter = express.Router();
 
@@ -14,7 +15,7 @@ const loginRouter = express.Router();
 // 당연히 로그인이 되어 있는지 없는지 유효성 검사는 해야한다.
 
 loginRouter.route("/").get(getLogin).post(postLogin);
-loginRouter.route("/account").get(getAccount).post(postAccount);
+loginRouter.route("/account").get(getAccount).post(email, postAccount);
 loginRouter.route("/loginHelp").get(getLoginHelp).post(postLoginHelp);
 
 export default loginRouter;

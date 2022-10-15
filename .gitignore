@@ -2,3 +2,4 @@ node_modules/
 /memo
 /.env
 trash/
+/server/public/script/js/login/nodemailer.js

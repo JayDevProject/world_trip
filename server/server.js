@@ -1,12 +1,13 @@
 import express from "express";
 import session from "express-session";
 
+import dotenv from "dotenv";
+
 import "./database/connect.js";
 
 import loginRouter from "./src/routers/loginRouter.js";
 import worldRouter from "./src/routers/worldRouter.js";
 
-import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
@@ -24,6 +25,7 @@ app.set("views", "./server/src/views");
 app.set("view engine", "pug");
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use("/", loginRouter);
 app.use("/world", worldRouter);

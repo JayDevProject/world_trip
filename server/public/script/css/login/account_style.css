@@ -1,50 +1,99 @@
-.accountContainer {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 450px;
-  height: 650px;
-  color: white;
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 20px;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-a {
+.accountContainer {
   position: absolute;
-  top: 5%;
+  width: 500px;
+  height: 650px;
+  border-radius: 20px;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.2);
+  overflow: auto;
+}
+
+.accountContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.accountContainer::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.accountContainer::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.content {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 50px;
+  text-align: center;
+  font-size: 35px;
+  margin: 30px 0 20px 0;
+}
+
+.header > .logo_title {
   text-decoration: none;
   color: white;
-  font-size: 25px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.accountForm {
-  position: absolute;
-  width: 250px;
-  top: 10%;
-  display: flex;
-  flex-direction: column;
+.userContainer {
+  margin-bottom: 25px;
 }
 
-.accountForm > input {
-  border-radius: 5px;
+.account > h4 {
+  margin: 15px 0 3px 0;
+}
+
+.account > .inputBox > input {
+  width: 392px;
   height: 30px;
-}
-
-.accountForm > label {
-  margin: 15px 0 2px 0;
-}
-
-.accountForm > span {
-  color: red;
-  font-size: 14px;
-  font-weight: bold;
-  visibility: hidden;
-}
-
-.accountBtn {
-  margin-top: 10px;
-  width: 250px;
-  height: 36px;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+.account_email > .inputBox > span {
+  float: right;
+  width: 135px;
+  height: 33px;
+  text-align: center;
+  line-height: 33px;
+  margin: 2px 2px 0 0;
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px gray;
+  cursor: pointer;
+}
+
+.account_email > .inputBox > input {
+  width: 250px;
+}
+
+.errorMsg {
+  display: none;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.account_button > button {
+  width: 400px;
+  height: 36px;
+  margin: 15px 0 60px 0;
+  font-size: 16px;
 }

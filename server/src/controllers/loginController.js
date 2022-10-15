@@ -76,6 +76,8 @@ export const postLogin = async (req, res) => {
     // 로그인 정보 저장
     req.session.userId = login_userInfo._id;
     req.session.nickname = login_userInfo.nickname;
+
+    // 비로그인 상태로 url 접근 시, 로그인 성공 이후 접근하려는 url 로 이동
     if (req.session.url) {
       return res.redirect(req.session.url);
     }
@@ -88,7 +90,7 @@ export const getAccount = (req, res) => {
 };
 
 export const postAccount = async (req, res) => {
-  const { password, password_check } = req.body;
+  const { password, password_check, emailCode } = req.body;
   const account_value = req.body;
   const account_list = Object.keys(account_value);
   let encodingPassword = "",
@@ -100,12 +102,24 @@ export const postAccount = async (req, res) => {
     email_error = { code: "", error: false };
 
   // 비밀번호 유효성 검사
-  if (password === password_check) {
+  if (password === password_check && password !== undefined) {
     encodingPassword = await bcrypt.hash(password, 5);
   } else {
     account_error = true;
     pwdCheck_error.code = "pwdCheck_noMatch";
     pwdCheck_error.error = true;
+  }
+
+  // 이메일 인증 코드 검사
+  // 인증번호 전송받지 않을 경우와 인증 코드가 다를 경우를 구분
+  if (req.session.emailCode === undefined) {
+    account_error = true;
+    email_error.code = "emailCode_certify";
+    email_error.error = true;
+  } else if (req.session.emailCode !== emailCode) {
+    account_error = true;
+    email_error.code = "emailCode_noMatch";
+    email_error.error = true;
   }
 
   for (let i = 0; i < account_list.length; i++) {
