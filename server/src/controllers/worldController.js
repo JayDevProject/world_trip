@@ -5,9 +5,14 @@ export const world = (req, res) => {
   res.render("ejs/world/world.ejs");
 };
 
-export const land = (req, res) => {
-  res.render("pug/album/album.pug");
+export const land = async (req, res) => {
+  const { userId } = req.session;
+  const { file } = await Image.findOne({ user: userId }).populate("file");
+
+  res.render("pug/album/album.pug", { file });
 };
+
+export const postLand = (req, res) => {};
 
 export const getUpload = (req, res) => {
   res.render("pug/album/upload.pug");

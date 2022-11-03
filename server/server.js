@@ -1,14 +1,12 @@
 import express from "express";
 import session from "express-session";
 
-import dotenv from "dotenv";
+import "dotenv/config";
 
 import "./database/connect.js";
 
 import loginRouter from "./src/routers/loginRouter.js";
 import worldRouter from "./src/routers/worldRouter.js";
-
-dotenv.config();
 
 const app = express();
 
