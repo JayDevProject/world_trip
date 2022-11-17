@@ -81,7 +81,7 @@ export const postLogin = async (req, res) => {
     if (req.session.url) {
       return res.redirect(req.session.url);
     }
-    return res.redirect("/world");
+    return res.redirect("/trip");
   }
 };
 

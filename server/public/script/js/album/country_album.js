@@ -1,15 +1,10 @@
-// 업로드 클릭 시
-const upload = document.querySelector(".upload");
+const borderImage = document.querySelectorAll(".borderImage");
 
-upload.addEventListener("click", () => {
-  const url = window.location.href;
-  location.href = `${url}/upload`;
-});
-
-const img = document.querySelectorAll(".image");
-
-img.forEach((i) =>
+borderImage.forEach((i) =>
   i.addEventListener("click", () => {
-    console.log("clicked!");
+    const fileId = i.querySelector(".fileId").value;
+    const url = window.location.href;
+
+    location.href = `${url}/${fileId}`;
   })
 );

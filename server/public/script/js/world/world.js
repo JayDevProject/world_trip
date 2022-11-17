@@ -73,22 +73,22 @@ setTimeout(() => {
 
           switch (classExist) {
             case "asia":
-              location.href = "/world/asia";
+              location.href = "/world/asia/p";
               break;
             case "europe":
-              location.href = "/world/europe";
+              location.href = "/world/europe/p";
               break;
             case "oceania":
-              location.href = "/world/oceania";
+              location.href = "/world/oceania/p";
               break;
             case "africa":
-              location.href = "/world/africa";
+              location.href = "/world/africa/p";
               break;
             case "northAmerica":
-              location.href = "/world/north-america";
+              location.href = "/world/north-america/p";
               break;
             case "southAmerica":
-              location.href = "/world/south-america";
+              location.href = "/world/south-america/p";
               break;
           }
         }

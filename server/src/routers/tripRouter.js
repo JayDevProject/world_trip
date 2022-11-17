@@ -2,13 +2,15 @@ import express from "express";
 import path from "path";
 import multer from "multer";
 import {
+  home,
   world,
-  land,
+  album,
+  getPhoto,
   getUpload,
   postUpload,
-} from "../controllers/worldController.js";
+} from "../controllers/tripController.js";
 import { login_inspect } from "../middlewares/loginMiddleware.js";
-import { continent } from "../middlewares/worldMiddleware.js";
+import { continent } from "../middlewares/tripMiddleware.js";
 
 // 확장자에 따른 저장 폴더 구분 및 이름 변경
 const storage = multer.diskStorage({
@@ -26,14 +28,15 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-const worldRouter = express.Router();
+const tripRouter = express.Router();
 
-worldRouter.get("/", login_inspect, world);
-worldRouter.get("/:id", login_inspect, continent, land);
+tripRouter.get("/", login_inspect, home);
+tripRouter.get("/:id/:id", login_inspect, continent, album);
+tripRouter.get("/:id/:id/:id", login_inspect, continent, getPhoto);
 
-worldRouter
-  .route("/:id/upload")
-  .get(login_inspect, continent, getUpload)
+tripRouter
+  .route("/upload")
+  .get(login_inspect, getUpload)
   .post(upload.array("upload_file"), postUpload);
 
-export default worldRouter;
+export default tripRouter;

@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/script/css/album/header.css")
+        link(rel="stylesheet" href="/script/css/album/photo.css")
+        script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
+        title Document
+    body
+        div.header 
+            div.func 
+                a(href="/world/upload").upload
+                    span 업로드
+                    i(class="fas fa-upload")
+        div.container
+            div.viewContainer
+                div.book
+                    div.viewImage
+                        each i, idx in getFile.imageFile
+                            img(src=`/file/upload/image/${i}`)
+                div.imageInformation
+                    div.title 임시 제목
+                    div.user
+                        div.profile
+                        div.username 이름
+                    div.description 간단한 설명
+                div.comment
+                    div.inputText
+                        div.profile
+                        input(type="text" placeholder="댓글 입력...")
+                    div.commentList
+            div.anotherFile
+                each i in anotherFile
+                    div.contents
+                        div.anotherList
+                            div.anotherView
+                                img.img(src=`/file/upload/image/${i.imageFile[0]}`)
+                            div.anotherInfo
+                                div.title 임시 제목
+                                div.username 임시 이름
+
+
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        script(src="/script/js/lib/turn.js")
+        script(src="/script/js/album/photo.js")
+        script $('.viewImage').turn({gradients: true, acceleration: true});

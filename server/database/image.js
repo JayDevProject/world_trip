@@ -5,9 +5,10 @@ const image = new mongoose.Schema({
   file: [
     {
       // country: { type: String },
+      fileId: { type: String, unique: true, default: "" },
       title: { type: String, default: "" },
       createAt: { type: String, default: Date.now },
-      comment: { type: String, default: "" },
+      description: { type: String, default: "" },
       public: { type: Boolean, default: true },
       imageFile: [{ type: String }],
     },

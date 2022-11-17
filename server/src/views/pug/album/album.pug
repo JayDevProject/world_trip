@@ -4,34 +4,39 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/script/css/album/header.css")
         link(rel="stylesheet" href="/script/css/album/country_album.css")
         script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
-        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
         title Document
     body
-        header
-            div.upload
-                span 업로드
-                i(class="fas fa-upload")
-        main 
-            div.imageContainer
-                each i in file
-                    div.image
-                        input.title(type="hidden" value=`${i.title}`)
-                        img(src=`/file/upload/image/${i.imageFile[0]}`)
-                else 
+        div.header 
+            div.func 
+                a(href="/world/upload").upload
+                    span 업로드
+                    i(class="fas fa-upload")
+    
+        div.main 
+            div.menu 
+                ul
+                    li
+                        a(href="p") 이미지
+                    li
+                        a(href="v") 비디오
+                    li 
+                        a(href="lm") 랜드마크
+
+            div.viewContainer 
+                if file
+                    each i in file
+                        div.borderImage
+                            input.fileId(type="hidden" value=`${i.fileId}`)
+                            img(src=`/file/upload/image/${i.imageFile[0]}`)
+                else
                     div 게시물이 없습니다.
 
-            div.borderView
-                div.imageShow
-                    div.selectViewImage
-                        img.viewImage(src=`/file/landmark/1.jpg`)
-                    div.button
-                        div.left
-                        div.right
-                div.contents
-                    div
-                    div 
-                    div
-                
+            div.menu 
+                ul
+                    li
+                        a(href="") 전체 카테고리
+
         script(src="/script/js/album/country_album.js")

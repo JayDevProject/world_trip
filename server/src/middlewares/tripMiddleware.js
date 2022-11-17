@@ -1,7 +1,5 @@
 export const continent = (req, res, next) => {
-  const {
-    params: { id },
-  } = req;
+  const { url } = req;
 
   const island = [
     "asia",
@@ -12,7 +10,11 @@ export const continent = (req, res, next) => {
     "south-america",
   ];
 
-  if (island.includes(id)) {
+  const extension = ["p", "v", "lm"];
+
+  const dismantle = url.split("/");
+
+  if (island.includes(dismantle[1]) && extension.includes(dismantle[2])) {
     next();
   } else {
     res.render("pug/error/404.pug");
