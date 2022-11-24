@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const image = new mongoose.Schema({
+const imageSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   file: [
     {
@@ -11,9 +11,18 @@ const image = new mongoose.Schema({
       description: { type: String, default: "" },
       public: { type: Boolean, default: true },
       imageFile: [{ type: String }],
+      comments: [
+        {
+          profileImg: { type: String },
+          author: { type: String },
+          text: { type: String },
+          isDeleted: { type: Boolean, default: false },
+          createAt: { type: Date },
+        },
+      ],
     },
   ],
 });
 
-const Image = mongoose.model("Image", image);
+const Image = mongoose.model("Image", imageSchema);
 export default Image;

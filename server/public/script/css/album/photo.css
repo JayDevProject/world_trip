@@ -61,6 +61,57 @@
   border-bottom: 1px solid white;
 }
 
+.commentList {
+  margin-top: 20px;
+}
+
+.commentList > ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.commentBox {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.viewImgBox > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.viewCommentBox {
+  margin-left: 15px;
+}
+
+.underViewName {
+  display: flex;
+}
+
+.underViewName > div {
+  text-align: top;
+}
+
+.underViewName > div:first-child {
+  font-size: 12px;
+  color: gray;
+  cursor: pointer;
+}
+
+.underViewName > div:last-child {
+  margin-left: 13px;
+  font-size: 12px;
+  color: gray;
+}
+
+.underViewText {
+  margin-top: 3px;
+  font-size: 13px;
+  color: white;
+}
+
 .anotherList {
   display: flex;
 }

@@ -1,6 +1,7 @@
 import "express-session";
 import nodemailer from "nodemailer";
 
+/** 로그인 정보 조회 */
 export const login_inspect = (req, res, next) => {
   const {
     session: { userId },

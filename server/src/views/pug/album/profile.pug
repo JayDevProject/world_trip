@@ -4,6 +4,56 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" href="")
+        link(rel="stylesheet" href="/script/css/album/header.css")
+        link(rel="stylesheet" href="/script/css/album/profile.css")
+        script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
         title Document
     body 
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form
+                        div.search
+                            input(type="text" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.profile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
+        
+        div.userProfile_container
+            <!-- 유저 프로필 정보 --!>
+            div.userProfile_border
+                <!-- 유저 프로필 사진 --!>
+                div.userProfileImg
+                    img(src="/file/landmark/1.jpg").profileView
+                <!-- 유저 기본정보 --!>
+                div.userInfo_container
+                    div.userInfo_border
+                        div.username
+                            div.name 이름입니다.
+                            div.editProfile
+                                a(href="") 프로필 편집
+                        div.userDescription
+                            div 설명입니다.
+
+            <!-- 파일 확장자에 따른 보이기 선택 --!>
+            div.selectView
+                    div.imgRecode 이미지
+                    div.videoRecode 비디오
+                    div.landmarkRecode 랜드마크

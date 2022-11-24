@@ -1,12 +1,16 @@
 import mongoose from "mongoose";
 
-const user = mongoose.Schema({
+const userSchema = mongoose.Schema({
   userId: { type: String, unique: true },
   password: { type: String },
   nickname: { type: String, unique: true },
   email: { type: String, unique: true },
-  profileImage: { type: String },
+  profileImg: {
+    type: String,
+    default: "https://chocobean.co.kr/common/img/default_profile.png",
+  },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });
 
-const User = mongoose.model("User", user);
+const User = mongoose.model("User", userSchema);
 export default User;

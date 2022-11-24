@@ -9,8 +9,6 @@ html {
 
 .header {
   position: sticky;
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: 5vh;
   top: 0;
@@ -18,33 +16,93 @@ html {
   z-index: 1;
 }
 
-.header > .func {
+.header > .header_container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: center;
-  width: 70%;
-  height: 5vh;
+  height: 100%;
 }
 
-.func > .upload {
+.homeBtn {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 4vw;
   min-width: 70px;
   height: 2.5vh;
   min-height: 25px;
-  border-radius: 5px;
-  color: black;
-  background-color: white;
   text-decoration: none;
+  color: white;
+}
+
+.searchArea {
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  border-radius: 120px;
+  background-color: rgb(22, 22, 22);
+  border: 1px solid gray;
+  overflow: hidden;
+}
+
+.search {
+  width: 320px;
+  height: 30px;
+}
+
+.search > input {
+  width: 80%;
+  height: 24px;
+  margin-left: 20px;
+  outline: none;
+  border: none;
+  background-color: rgb(22, 22, 22);
+  color: white;
+}
+
+.search > button {
+  width: 35px;
+  height: 30px;
+  border: none;
+  border-left: 1px solid gray;
+  background-color: rgb(22, 22, 22);
+  color: white;
   cursor: pointer;
 }
 
-.upload:hover {
+.navMenu {
+  display: flex;
+  border-left: 1px solid gray;
+}
+
+.profileImage {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.upload,
+.link {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 6vw;
+  min-width: 100px;
+  height: 2.5vh;
+  min-height: 25px;
+  border-right: 1px solid gray;
+  text-decoration: none;
+  color: white;
+}
+
+.upload:hover,
+.link:hover {
   background-color: rgb(200, 200, 200);
 }
 
-.upload:active {
-  background-color: rgb(175, 175, 175);
+.upload:active,
+.link:active {
+  background-color: rgb(146, 146, 146);
 }

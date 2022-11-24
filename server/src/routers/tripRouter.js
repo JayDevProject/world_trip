@@ -6,6 +6,8 @@ import {
   world,
   album,
   getPhoto,
+  postPhoto,
+  getProfile,
   getUpload,
   postUpload,
 } from "../controllers/tripController.js";
@@ -30,13 +32,17 @@ const upload = multer({ storage: storage });
 
 const tripRouter = express.Router();
 
+// 메인화면
 tripRouter.get("/", login_inspect, home);
-tripRouter.get("/:id/:id", login_inspect, continent, album);
-tripRouter.get("/:id/:id/:id", login_inspect, continent, getPhoto);
 
+// 업로드
 tripRouter
   .route("/upload")
   .get(login_inspect, getUpload)
   .post(upload.array("upload_file"), postUpload);
+
+tripRouter.get("/:id", login_inspect, album);
+tripRouter.get("/:id/album", login_inspect, album);
+tripRouter.route("/:id/:id").get(login_inspect, getPhoto).post(postPhoto);
 
 export default tripRouter;

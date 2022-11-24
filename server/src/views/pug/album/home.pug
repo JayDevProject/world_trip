@@ -4,5 +4,62 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        link(rel="stylesheet" href="/script/css/album/header.css")
+        link(rel="stylesheet" href="/script/css/album/home.css")
+        script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
+        title trip
     body 
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form
+                        div.search
+                            input(type="text" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.profile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
+
+        <!-- 상단 메뉴 --!>
+        div.homeContainer
+            div.homeView
+                <!-- 인기 많은 유저 추천, 가로 스크롤 --!>
+                div.favUser
+                    div.favUser_border
+                        div.favUser_list
+                            div.favUser_listView
+                                div.favUser_profile
+                                div.favUser_name 임시 이름
+                <!-- 인기 많은 업로드 이미지, 가로 스크롤 --!>
+                div.favImage
+                    div.favImage_border
+                        div.favImage_list
+                            div.favImage_listView
+                                img(src="/file/landmark/1.jpg").favImage_view
+                <!-- 인기 많은 업로드 비디오 --!>
+                div.favVideo
+                    <!-- 여기서부터 비디오 전체 설정 --!>
+                    div.favVideo_border
+                        div.favVideo_innerBorder
+                            div.favVideo_area
+                                img(src="/file/landmark/1.jpg").favVideo_thumb
+                                div.favVideo_title
+                                    div.title 제목
+                                    div.description 설명
+                                    div.username 이름

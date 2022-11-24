@@ -1,3 +1,6 @@
+import User from "../../database/User.js";
+import Image from "../../database/image.js";
+
 export const continent = (req, res, next) => {
   const { url } = req;
 

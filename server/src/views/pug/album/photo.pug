@@ -9,28 +9,70 @@ html(lang="en")
         script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
         title Document
     body
-        div.header 
-            div.func 
-                a(href="/world/upload").upload
-                    span 업로드
-                    i(class="fas fa-upload")
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form
+                        div.search
+                            input(type="text" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.headerProfile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
+        <!-- 게시물 --!>
         div.container
             div.viewContainer
+                <!-- 업로드 파일 --!>
                 div.book
                     div.viewImage
-                        each i, idx in getFile.imageFile
+                        each i, idx in imageFile
                             img(src=`/file/upload/image/${i}`)
+                <!-- 업로드 파일 제목, 유저 정보, 문구 --!>
                 div.imageInformation
                     div.title 임시 제목
                     div.user
                         div.profile
                         div.username 이름
                     div.description 간단한 설명
+                <!-- 댓글 작성 --!>
                 div.comment
-                    div.inputText
-                        div.profile
-                        input(type="text" placeholder="댓글 입력...")
-                    div.commentList
+                    form(method="POST" autocomplete='off').commentForm
+                        <!-- 댓글 입력 --!>
+                        div.inputText
+                            div.profile
+                            input(type="text" name="text" placeholder="댓글 입력...").commentInput
+                        <!-- 작성된 댓글 목록 --!>
+                        div.commentList
+                            ul.commentUl
+                                if(comments.length !== 0)
+                                    each comment in comments
+                                        div.commentBox
+                                            div.viewImgBox
+                                                img(src=`${comment.profileImg}`)
+                                            div.viewCommentBox
+                                                div.underViewName
+                                                    div=comment.author
+                                                    div=comment.createAt
+                                                div.underViewText 
+                                                    div=comment.text
+                                else
+                                    div 작성된 댓글이 없습니다.             
             div.anotherFile
                 each i in anotherFile
                     div.contents

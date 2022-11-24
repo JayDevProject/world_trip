@@ -1,44 +1,97 @@
 import Image from "../../database/image.js";
-import "express-session";
+import User from "../../database/User.js";
+import Comment from "../../database/comment.js";
+import mongoose from "mongoose";
 
 export const world = (req, res) => {
   return res.render("ejs/world/world.ejs");
 };
 
 export const home = (req, res) => {
-  return res.render("pug/album/home.pug");
+  const { nickname } = req.session;
+
+  return res.render("pug/album/home.pug", { nickname });
 };
 
 export const album = async (req, res) => {
-  const { userId } = req.session;
+  const { userId, nickname } = req.session;
   const exist = await Image.exists({ user: userId });
 
   if (exist) {
     const { file } = await Image.findOne({ user: userId }).populate("file");
 
-    return res.render("pug/album/album.pug", { file });
+    return res.render("pug/album/album.pug", { file, nickname });
   } else {
     return res.render("pug/album/album.pug");
   }
 };
 
 export const getPhoto = async (req, res) => {
-  const { userId } = req.session;
-  const { id } = req.params;
+  const {
+    session: { nickname },
+    params: { id },
+  } = req;
 
-  const { file } = await Image.findOne({ user: userId });
+  // 현재 게시물 작성자
+  const ownedUser = req.url.split("/")[1];
+  const { _id } = await User.findOne({ nickname: ownedUser });
+  req.session.postId = _id;
 
-  const getFile = file.filter((i) => i.fileId === id)[0];
+  // 접근한 게시물의 파일 정보
+  const { file } = await Image.findOne({ user: _id });
+
+  // 접근할 게시물의 이미지 파일 및 댓글, 다른 게시물 정보 가져오기
+  const { imageFile, comments } = file.find((i) => i.fileId === id);
   const anotherFile = file.filter((i) => i.fileId !== id);
 
-  if (getFile.length !== 0) {
-    return res.render("pug/album/photo.pug", { getFile, anotherFile });
+  if (imageFile.length !== 0) {
+    return res.render("pug/album/photo.pug", {
+      imageFile,
+      anotherFile,
+      nickname,
+      comments,
+    });
   } else {
     return res.render("pug/error/404.pug");
   }
 };
 
-export const getProfile = (req, res) => {};
+export const postPhoto = async (req, res) => {
+  const {
+    session: { userId, postId },
+    body: { text },
+    params: { id },
+  } = req;
+
+  // 로그인(댓글 작성) 유저 정보 조회
+  const { profileImg, nickname } = await User.findById(userId);
+
+  // 댓글 작성한 게시물 id 조회
+  const imagePost = await Image.findOne({ user: postId });
+  const { file } = imagePost;
+  const findId = file.find((i) => i.fileId === id);
+
+  // 댓글 정보
+  // 댓글은 ajax 를 통한 비동기적 방식을 사용
+  const comment = {
+    profileImg,
+    author: nickname,
+    text,
+    createAt: new Date(),
+  };
+
+  // 댓글 정보 DB 업로드
+  findId.comments.unshift(comment);
+  imagePost.save();
+
+  return res.json(comment);
+};
+
+export const getProfile = async (req, res) => {
+  const { nickname } = req.session;
+
+  return res.render("pug/album/profile.pug", { nickname });
+};
 
 export const getUpload = (req, res) => {
   return res.render("pug/album/upload.pug");
