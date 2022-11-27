@@ -1,0 +1,93 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/script/css/album/header.css")
+        link(rel="stylesheet" href="/script/css/album/search.css")
+        script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
+        title Document
+    body 
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form(method="GET")
+                        div.search
+                            input(type="text" name="search" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.profile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
+         
+        <!-- 유저, 이미지, 비디오 선택 시 해당 정보 페이지 보임 ---!>
+        div.main 
+            div.menu 
+                ul
+                    li.userPage.fontWhite 유저
+                    li.imagePage.fontGray 이미지
+                    li.videoPage.fontGray 비디오
+
+            div.searchView
+                <!-- 유저에 대한 검색 --!>
+                div.user
+                    if(user.length)
+                        each i in user
+                            div.userBox
+                                input(type="hidden" value=`${i.nickname}`)
+                                <!-- 유저 프로필 이미지 --!>
+                                div.userProfileImg
+                                    div.img
+                                        img(src=`${i.profileImg}`)
+                                <!-- 유저 닉네임, 소개 --!>
+                                div.userContents
+                                    div.username #{i.nickname}
+                                    div.introduce #{i.introduce}
+                    else
+                        <!-- 아무것도 검색되지 않을 시 --!>
+                        div.noMatch
+                            div 검색 결과에 일치하는 것이 없습니다.
+                <!-- 이미지에 대한 검색 --!>
+                div.image
+                    if(searchImage.length)
+                        each i in searchImage
+                            div.imageBox
+                                input(type="hidden" value=`${i.nickname}`).hiddenNickname
+                                input(type="hidden" value=`${i.file.fileId}`).hiddenFileId
+                                <!-- 이미지 섬네일 --!>
+                                div.viewImage
+                                    div
+                                        img(src=`/file/upload/image/${i.file.imageFile[0]}`)
+                                <!-- 이미지 제목, 유저 프로필, 이미지 설명 --!>
+                                div.imageContents
+                                    div.title #{i.file.title}
+                                    div.userProfile
+                                        div
+                                            a(href=`/trip/${i.nickname}`)
+                                                img(src=`${i.profileImg}`)
+                                        div.username
+                                            a(href=`/trip/${i.nickname}`) #{i.nickname}
+                                    div.description #{i.file.description}
+                    else
+                        <!-- 아무것도 검색되지 않을 시 --!>
+                        div.noMatch
+                            div 검색 결과에 일치하는 것이 없습니다.
+                div.video
+
+        script(src="/script/js/album/search.js")

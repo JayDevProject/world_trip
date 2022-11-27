@@ -110,9 +110,6 @@ export const postAccount = async (req, res) => {
     pwdCheck_error.error = true;
   }
 
-  console.log(typeof req.session.emailCode);
-  console.log(typeof emailCode);
-
   // 이메일 인증 코드 검사
   // 인증번호 전송받지 않을 경우와 인증 코드가 다를 경우를 구분
   if (req.session.emailCode === undefined) {

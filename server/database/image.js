@@ -6,9 +6,9 @@ const imageSchema = new mongoose.Schema({
     {
       // country: { type: String },
       fileId: { type: String, unique: true, default: "" },
-      title: { type: String, default: "" },
+      title: { type: String, default: "[ 제목 없음 ]" },
       createAt: { type: String, default: Date.now },
-      description: { type: String, default: "" },
+      description: { type: String, default: "[ 영상 설명이 없습니다. ]" },
       public: { type: Boolean, default: true },
       imageFile: [{ type: String }],
       comments: [
@@ -17,7 +17,7 @@ const imageSchema = new mongoose.Schema({
           author: { type: String },
           text: { type: String },
           isDeleted: { type: Boolean, default: false },
-          createAt: { type: Date },
+          createAt: { type: String },
         },
       ],
     },

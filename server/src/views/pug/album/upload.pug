@@ -8,34 +8,47 @@ html(lang="en")
         script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
         title Document
     body 
+        <!-- 업로드 --!>
         div.upload_topContainer
             form(method="POST" enctype="multipart/form-data") 
+                <!-- input 버튼 숨김 --!>
                 input(type="file" style="display: none" id="hidden_uploadFile_input" name="upload_file" accept=".jpg, .png, .gif, .svg, .mp4" multiple)
                 div.upload_downContainer
                     div.upload_imageBox
+                        <!-- 맨 처음과 이미지 선택이 없을 시 보임 --!>
                         div.upload_imageBox_visibleNormal
                             i.img_icon(class="fas fa-photo-video fa-4x")
                             div.upload_button 컴퓨터에서 선택
+                        <!-- 이미지 선택했을 시 보임 --!>
                         div.upload_imageBox_selectVisible
+                            <!-- 보이는 현재 이미지 삭제 --!>
                             div.del_button
                                 div.button_circle.del_button
                                     i(class="fas fa-times fa-lg")
+                            <!-- 버튼을 클릭하면 좌우 넘김 --!>
                             div.select_button
+                                <!-- 클릭 시 이전 이미지 --!>
                                 div.button_circle.left_button
                                     i(class="fas fa-chevron-left")
+                                <!-- 클릭 시 다음 이미지 --!>
                                 div.button_circle.right_button
                                     i(class="fas fa-chevron-right")
+                            <!-- 현재 이미지에서 다른 이미지 추가 --!>
                             div.add_button
                                 div.button_circle.add_button
                                     i(class="fas fa-images")
+                    <!-- 이미지 업로드 시, 제목과 문구, 숨김 옵션 선택 --!>
                     div.upload_imageInfo_container
+                        <!-- 제목 --!>
                         div.titleBox
                             input(type="text" id="title" name="title" placeholder="제목")
+                        <!-- 문구 --!>
                         div.phrasesBox 
                             textarea(id="phrases" name="phrases", cols="30", rows="10" placeholder="문구 입력...")
+                        <!-- 숨김(default false) --!>
                         div.publicBox
                             span 게시물 숨기기
-                            input(type="checkbox" id="toggle" name="public" hidden)
+                            input(type="checkbox" id="toggle" name="openPost" hidden)
                             label(for="toggle" class="toggleSwitch")
                                 span.toggleButton
                         button.upload_submitButton 업로드

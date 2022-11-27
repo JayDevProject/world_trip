@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
     type: String,
     default: "https://chocobean.co.kr/common/img/default_profile.png",
   },
-  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+  introduce: { type: String, default: "[ 입력된 소개글이 없습니다. ]" },
 });
 
 const User = mongoose.model("User", userSchema);

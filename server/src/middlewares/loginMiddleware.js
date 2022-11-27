@@ -15,6 +15,7 @@ export const login_inspect = (req, res, next) => {
   }
 };
 
+/** 이메일 인증 */
 export const email = (req, res, next) => {
   // 이메일 입력 값
   const { emailVertify } = req.body;

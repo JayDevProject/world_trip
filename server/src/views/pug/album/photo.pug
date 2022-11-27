@@ -19,9 +19,9 @@ html(lang="en")
                         span Trip
                 <!-- 검색 --!>
                 div.searchArea
-                    form
+                    form(method="GET")
                         div.search
-                            input(type="text" placeholder="검색")
+                            input(type="text" name="search" placeholder="검색")
                             button
                                 i(class="fas fa-search")
                 <!-- 메뉴 --!>
@@ -31,7 +31,7 @@ html(lang="en")
                             i(class="fas fa-upload")
                             span 업로드
                     div.profileArea
-                        div.headerProfile
+                        div.profile
                             a(href=`/trip/${nickname}`).link
                                 div.profileImage
                                 span 프로필
@@ -45,17 +45,19 @@ html(lang="en")
                             img(src=`/file/upload/image/${i}`)
                 <!-- 업로드 파일 제목, 유저 정보, 문구 --!>
                 div.imageInformation
-                    div.title 임시 제목
+                    div.title #{title}
                     div.user
                         div.profile
-                        div.username 이름
-                    div.description 간단한 설명
+                            img(src=`${profileImg}`)
+                        div.username #{nickname}
+                    div.description #{description}
                 <!-- 댓글 작성 --!>
                 div.comment
                     form(method="POST" autocomplete='off').commentForm
                         <!-- 댓글 입력 --!>
                         div.inputText
                             div.profile
+                                img(src=`${profileImg}`)
                             input(type="text" name="text" placeholder="댓글 입력...").commentInput
                         <!-- 작성된 댓글 목록 --!>
                         div.commentList
@@ -72,7 +74,7 @@ html(lang="en")
                                                 div.underViewText 
                                                     div=comment.text
                                 else
-                                    div 작성된 댓글이 없습니다.             
+                                    div.noComment 작성된 댓글이 없습니다.            
             div.anotherFile
                 each i in anotherFile
                     div.contents
@@ -80,8 +82,8 @@ html(lang="en")
                             div.anotherView
                                 img.img(src=`/file/upload/image/${i.imageFile[0]}`)
                             div.anotherInfo
-                                div.title 임시 제목
-                                div.username 임시 이름
+                                div.title #{i.title}
+                                div.username #{nickname}
 
 
 

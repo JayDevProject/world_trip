@@ -19,9 +19,9 @@ html(lang="en")
                         span Trip
                 <!-- 검색 --!>
                 div.searchArea
-                    form
+                    form(method="GET")
                         div.search
-                            input(type="text" placeholder="검색")
+                            input(type="text" name="search" placeholder="검색")
                             button
                                 i(class="fas fa-search")
                 <!-- 메뉴 --!>

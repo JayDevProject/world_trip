@@ -34,22 +34,27 @@ export const getPhoto = async (req, res) => {
 
   // 현재 게시물 작성자
   const ownedUser = req.url.split("/")[1];
-  const { _id } = await User.findOne({ nickname: ownedUser });
+  const { _id, profileImg } = await User.findOne({ nickname: ownedUser });
   req.session.postId = _id;
 
   // 접근한 게시물의 파일 정보
   const { file } = await Image.findOne({ user: _id });
 
-  // 접근할 게시물의 이미지 파일 및 댓글, 다른 게시물 정보 가져오기
-  const { imageFile, comments } = file.find((i) => i.fileId === id);
+  // 접근할 게시물의 제목, 문구, 이미지 파일 및 댓글, 다른 게시물 정보 가져오기
+  const { title, description, imageFile, comments } = file.find(
+    (i) => i.fileId === id
+  );
   const anotherFile = file.filter((i) => i.fileId !== id);
 
   if (imageFile.length !== 0) {
     return res.render("pug/album/photo.pug", {
-      imageFile,
-      anotherFile,
+      profileImg,
+      title,
+      description,
       nickname,
+      imageFile,
       comments,
+      anotherFile,
     });
   } else {
     return res.render("pug/error/404.pug");
@@ -71,13 +76,21 @@ export const postPhoto = async (req, res) => {
   const { file } = imagePost;
   const findId = file.find((i) => i.fileId === id);
 
+  // 현재 시간
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const date = today.getDate();
+  const hours = today.getHours();
+  const minutes = today.getMinutes();
+
   // 댓글 정보
   // 댓글은 ajax 를 통한 비동기적 방식을 사용
   const comment = {
     profileImg,
     author: nickname,
     text,
-    createAt: new Date(),
+    createAt: `${year}/${month}/${date} · ${hours}/${minutes}`,
   };
 
   // 댓글 정보 DB 업로드
@@ -101,6 +114,7 @@ export const postUpload = async (req, res) => {
   const {
     files,
     session: { userId },
+    body: { title, phrases, openPost },
   } = req;
 
   let upload_file_array = [],
@@ -113,14 +127,18 @@ export const postUpload = async (req, res) => {
     // 중복되지 않는 고유 값으로 url 에 해당 정보를 주기 위함
     const fileId = new Date().getTime().toString(36);
 
-    // 배열에 담긴 파일의 이름 push
+    // 업로드 시 files 안의 이미지 파일 정보를 배열에 담기
     files.forEach((img) => {
       upload_file_array.push(img.filename);
     });
 
+    // 업로드 파일에 대한 정보
     new_file = [
       {
         fileId,
+        title,
+        description: phrases,
+        public: openPost,
         imageFile: upload_file_array,
       },
     ];

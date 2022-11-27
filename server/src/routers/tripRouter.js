@@ -12,7 +12,7 @@ import {
   postUpload,
 } from "../controllers/tripController.js";
 import { login_inspect } from "../middlewares/loginMiddleware.js";
-import { continent } from "../middlewares/tripMiddleware.js";
+import { continent, search } from "../middlewares/tripMiddleware.js";
 
 // 확장자에 따른 저장 폴더 구분 및 이름 변경
 const storage = multer.diskStorage({
@@ -33,7 +33,7 @@ const upload = multer({ storage: storage });
 const tripRouter = express.Router();
 
 // 메인화면
-tripRouter.get("/", login_inspect, home);
+tripRouter.get("/", login_inspect, search, home);
 
 // 업로드
 tripRouter

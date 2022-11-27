@@ -33,6 +33,7 @@ contents.forEach((i) => {
 // 댓글 form 과 댓글 input 가져오기
 const commentForm = document.querySelector(".commentForm");
 const commentInput = document.querySelector(".commentInput");
+const noComment = document.querySelector(".noComment");
 
 // submit 할 현재 게시물의 url
 const url = window.location.href;
@@ -108,4 +109,9 @@ function addComment(data) {
   commentBox.appendChild(viewImgBox);
   commentBox.appendChild(viewCommentBox);
   ul.prepend(commentBox);
+
+  // 작성된 댓글 없을 때 나타나는 문구가 있는 경우 댓글 추가 시에 사라짐
+  if (noComment) {
+    noComment.className = "hidden";
+  }
 }
