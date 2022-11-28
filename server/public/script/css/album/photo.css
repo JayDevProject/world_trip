@@ -31,9 +31,11 @@
 .user > .username {
   line-height: 60px;
   margin-left: 20px;
+  text-decoration: none;
+  color: white;
 }
 
-.profile > img {
+.profile > a > img {
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -75,7 +77,7 @@
   margin-bottom: 20px;
 }
 
-.viewImgBox > img {
+.viewImgBox > a > img {
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -94,13 +96,18 @@
   text-align: top;
 }
 
-.underViewName > div:first-child {
+.underViewName > a {
   font-size: 12px;
   color: gray;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.underViewName > div:last-child {
+.underViewName > a:hover {
+  color: white;
+}
+
+.underViewName > div {
   margin-left: 13px;
   font-size: 12px;
   color: gray;
@@ -168,4 +175,8 @@
   font-size: 12px;
   margin-top: 5px;
   color: gray;
+}
+
+.hidden {
+  display: none;
 }

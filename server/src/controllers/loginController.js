@@ -7,75 +7,58 @@ export const getLogin = (req, res) => {
 };
 
 export const postLogin = async (req, res) => {
-  const login_value = req.body;
-  const login_list = Object.keys(login_value);
-  let login_error = false,
-    userId_loginError = { code: "", error: false },
-    password_loginError = { code: "", error: false };
+  const {
+    body: { login_userId, login_password },
+  } = req;
+  let error = false;
+  let userIdError = { code: "", error: false },
+    passwordError = { code: "", error: false };
+  let user = "";
 
-  // 아이디와 비밀번호의 name 값과 value 를 각각 전달.
-  // name 은 switch 구문에서 구별하는 용도로 사용
-  for (let i = 0; i < login_list.length; i++) {
-    let value = login_value[login_list[i]];
-    login_null(login_list[i], value);
+  const sign = await User.exists({ userId: login_userId });
+
+  // 가입된 아이디가 없는 경우
+  if (!sign) {
+    error = true;
+    userIdError = { code: "userId_noSign", error: true };
   }
 
-  function login_null(list, value) {
-    if (value === "") {
-      switch (list) {
-        case "login_userId":
-          login_error = true;
-          userId_loginError.code = "userId_loginNull";
-          userId_loginError.error = true;
-          break;
-        case "login_password":
-          login_error = true;
-          password_loginError.code = "pwd_loginNull";
-          password_loginError.error = true;
-          break;
-      }
-    }
-    return;
+  // 아이디 입력하지 않았을 경우
+  if (!login_userId) {
+    error = true;
+    userIdError = { code: "userId_null", error: true };
   }
 
-  const login_userInfo = await User.findOne({
-    userId: login_value.login_userId,
-  });
+  // 비밀번호 입력을 하지 않았을 경우
+  if (!login_password) {
+    error = true;
+    passwordError = { code: "password_null", error: true };
+  }
 
-  // 입력한 로그인 유저 정보가 있고, 비밀번호 값이 null 이 아닌 경우 유효성 검사
-  // 비밀번호가 일치하지 않을 경우 에러
-  if (login_userInfo && !password_loginError.error) {
-    const pwd_inspect = await bcrypt.compare(
-      login_value.login_password,
-      login_userInfo.password
-    );
+  // 비밀번호, 아이디 입력 값이 있는 경우
+  if (login_userId && login_password && sign) {
+    // req.session 을 활용하기 위해 전역변수에 값을 저장
+    user = await User.findOne({ userId: login_userId });
+    const pwdInspect = await bcrypt.compare(login_password, user.password);
 
-    if (!pwd_inspect) {
-      login_error = true;
-      password_loginError.code = "pwd_noMatch";
-      password_loginError.error = true;
+    // 저장된 아이디의 비밀번호와 비교
+    if (!pwdInspect) {
+      error = true;
+      passwordError = { code: "password_noMatch", error: true };
     }
   }
 
-  let login_info = [
-    {
-      id: userId_loginError.code,
-      class: "error",
-      error: userId_loginError.error,
-    },
-    {
-      id: password_loginError.code,
-      class: "error",
-      error: password_loginError.error,
-    },
+  let errorCode = [
+    { errorId: userIdError.code, error: userIdError.error },
+    { errorId: passwordError.code, error: passwordError.error },
   ];
 
-  if (login_error) {
-    return res.render("ejs/login/login.ejs", { login_info });
+  if (error) {
+    return res.render("ejs/login/login.ejs", { errorCode });
   } else {
     // 로그인 정보 저장
-    req.session.userId = login_userInfo._id;
-    req.session.nickname = login_userInfo.nickname;
+    req.session.userId = user._id;
+    req.session.nickname = user.nickname;
 
     // 비로그인 상태로 url 접근 시, 로그인 성공 이후 접근하려는 url 로 이동
     if (req.session.url) {
@@ -230,4 +213,116 @@ export const postLoginHelp = async (req, res) => {
   } else {
     return res.render("ejs/login/loginHelp.ejs");
   }
+};
+
+export const getEditProfile = async (req, res) => {
+  const { nickname } = req.session;
+  const user = await User.findOne({ nickname });
+
+  return res.render("pug/album/editProfile.pug", { nickname, user });
+};
+
+export const postEditProfile = async (req, res) => {
+  const {
+    file,
+    body: { name, introduce, email, nowPwd, changePwd, checkPwd },
+    session: { nickname, userId },
+  } = req;
+
+  let error = false;
+  let nicknameErr = { code: "", error: false },
+    emailErr = { code: "", error: false },
+    nowPwdErr = { code: "", error: false },
+    newPwdErr = { code: "", error: false };
+  let encodingPassword = "";
+
+  const user = await User.findOne({ nickname });
+  const newName = await User.exists({ userId });
+  const newEmail = await User.exists({ email });
+
+  if (newName && name !== user.nickname) {
+    error = true;
+    nicknameErr = { code: "name_exists", error: true };
+  }
+
+  if (!name) {
+    error = true;
+    nicknameErr = { code: "name_null", error: true };
+  }
+
+  if (newEmail && email !== user.email) {
+    error = true;
+    emailErr = { code: "email_exists", error: true };
+  }
+
+  if (!email) {
+    error = true;
+    emailErr = { code: "email_null", error: true };
+  }
+
+  if (!nowPwd && !changePwd && !checkPwd) {
+    console.log("pass");
+  } else {
+    const pwdInspect = await bcrypt.compare(nowPwd, user.password);
+
+    if (!pwdInspect) {
+      error = true;
+      nowPwdErr = { code: "nowPwd_noMatch", error: true };
+    }
+
+    if (changePwd !== checkPwd) {
+      error = true;
+      newPwdErr = { code: "newPwd_noMatch", error: true };
+    }
+
+    if (!nowPwd) {
+      error = true;
+      nowPwdErr = { code: "nowPwd_null", error: true };
+    }
+
+    if (!changePwd || !checkPwd) {
+      error = true;
+      newPwdErr = { code: "newPwd_null", error: true };
+    }
+
+    encodingPassword = await bcrypt.hash(changePwd, 5);
+  }
+
+  let errorCode = [
+    { errorId: nicknameErr.code, error: nicknameErr.error },
+    { errorId: emailErr.code, error: emailErr.error },
+    { errorId: nowPwdErr.code, error: nowPwdErr.error },
+    { errorId: newPwdErr.code, error: newPwdErr.error },
+  ];
+
+  if (error) {
+    return res.render("pug/album/editProfile.pug", {
+      nickname,
+      user,
+      errorCode,
+    });
+  } else {
+    // 프로필 이미지 변경 값이 없으면 현재 프로필 이미지 유지
+    // 비밀번호 변경 값이 없으면 현재 비밀번호 유지
+    await User.findOneAndUpdate(
+      { _id: userId },
+      {
+        profileImg: file ? file.filename : user.profileImg,
+        nickname: name,
+        introduce,
+        email: email,
+        password: encodingPassword ? encodingPassword : user.password,
+      }
+    );
+
+    // 닉네임 변경되는 경우 url 을 위해 수정
+    req.session.nickname = name;
+
+    return res.redirect(`/trip/${name}`);
+  }
+};
+
+export const logout = (req, res) => {
+  req.session.destroy();
+  return res.redirect("/");
 };

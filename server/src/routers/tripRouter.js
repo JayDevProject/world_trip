@@ -41,8 +41,7 @@ tripRouter
   .get(login_inspect, getUpload)
   .post(upload.array("upload_file"), postUpload);
 
-tripRouter.get("/:id", login_inspect, album);
-tripRouter.get("/:id/album", login_inspect, album);
+tripRouter.get("/:id", login_inspect, getProfile);
 tripRouter.route("/:id/:id").get(login_inspect, getPhoto).post(postPhoto);
 
 export default tripRouter;

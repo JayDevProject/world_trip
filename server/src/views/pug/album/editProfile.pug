@@ -1,0 +1,115 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/script/css/album/header.css")
+        link(rel="stylesheet" href="/script/css/album/editProfile.css")
+        script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
+        title Document
+    body 
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form(method="GET")
+                        div.search
+                            input(type="text" name="search" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.profile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
+
+        div.editContainer
+            if(errorCode)
+                each err in errorCode
+                    input(type="hidden" value=`${err.errorId}` class=`${err.error}`)
+            div.userInfo
+                div.contentsBorder
+                    form(method="POST" autocomplete='off' enctype="multipart/form-data").editForm
+                        div.editProfileImg
+                            div.profileBorder
+                                div.nowImg
+                                    img(src=`/file/upload/userProfile/${user.profileImg}`).img
+                                div.nowNickname
+                                    div #{user.nickname}
+                                    div.changeProfileImg 프로필 사진 변경
+                                    input(type="file" style="display: none" id="hidden_profileImg_input" name="upload_profileImg" accept=".jpg, .png, .gif")
+                        <!-- 유저 닉네임 변경 --!>
+                        div.editNickname.content
+                            div.editNameTitle.contentTitle
+                                h4
+                                    label(for="name") 사용자 이름
+                            div.editNameInput.inputBox
+                                input(type="input" name="name" value=`${user.nickname}`).styleInput
+                                span.errorMsg.nameErr #
+                        <!-- 유저 소개 변경 --!>
+                        div.editIntro.content
+                            div.editIntroTitle.contentTitle
+                                h4
+                                    label(for="introduce") 소개
+                            div.editIntroInput.inputBox
+                                input(type="input" name="introduce" value=`${user.introduce}`).styleInput
+                                span.errorMsg #
+                        <!-- 유저 이메일 변경 --!>
+                        div.editEmail.content
+                            div.editEmailTitle.contentTitle
+                                h4
+                                    label(for="email") 이메일
+                            div.editEmailInput.inputBox
+                                input(type="input" name="email" value=`${user.email}`).styleInput
+                                span.errorMsg.emailErr #
+                        <!-- 비밀번호 변경 영역 --!>
+                        div.editPassword
+                            <!-- 현재 비밀번호 --!>
+                            div.nowPwd.content
+                                div.nowPwdTitle.contentTitle
+                                    h4
+                                        label(for="nowPwd") 현재 비밀번호
+                                div.nowPwdInput.inputBox
+                                    input(type="input" name="nowPwd").styleInput
+                                    span.errorMsg.nowPwdErr #
+                            <!-- 새 비밀번호 --!>
+                            div.changePwd.content
+                                div.changePwdTitle.contentTitle
+                                    h4
+                                        label(for="changePwd") 새 비밀번호
+                                div.changePwdInput.inputBox
+                                    input(type="input" name="changePwd").styleInput
+                                    span.errorMsg.changePwdErr #
+                            <!-- 새 비밀번호 확인 --!>
+                            div.CheckPwd.content
+                                div.CheckPwdTitle.contentTitle
+                                    h4
+                                        label(for="checkPwd") 새 비밀번호 확인
+                                div.CheckPwdInput.inputBox
+                                    input(type="input" name="checkPwd").styleInput
+                                    span.errorMsg #
+                        <!-- 전송 및 회원탈퇴 --!>
+                        div.submit
+                            <!-- 프로필 수정 버튼 --!>
+                            div.buttonBorder.content
+                                div.buttonTitle.contentTitle
+                                    button.submitBtn 제출
+                            <!-- 회원탈퇴 --!>
+                            div.delBorder
+                                div.delTitle
+                                    i(class="fas fa-trash")
+                                    span 회원탈퇴
+        script(src="/script/js/login/editProfile.js")

@@ -93,19 +93,26 @@ function addComment(data) {
   underViewText.className = "underViewText";
   // 댓글
   const text = document.createElement("div");
+  // 댓글의 유저 프로필로 이동
+  const a1 = document.createElement("a");
+  const a2 = document.createElement("a");
 
   // 유저 프로필 이미지, 작성자, 작성된 날짜, 댓글을 받아온 정보로부터 입력
-  img.src = data.profileImg;
+  img.src = `/file/upload/userProfile/${data.profileImg}`;
   author.innerText = data.author;
   createAt.innerText = data.createAt;
   text.innerText = data.text;
+  a1.href = `/trip/${data.author}`;
+  a2.href = `/trip/${data.author}`;
 
   underViewText.appendChild(text);
-  underViewName.appendChild(author);
+  underViewName.appendChild(a1);
+  a1.appendChild(author);
   underViewName.appendChild(createAt);
   viewCommentBox.appendChild(underViewName);
   viewCommentBox.appendChild(underViewText);
-  viewImgBox.appendChild(img);
+  viewImgBox.appendChild(a2);
+  a2.appendChild(img);
   commentBox.appendChild(viewImgBox);
   commentBox.appendChild(viewCommentBox);
   ul.prepend(commentBox);

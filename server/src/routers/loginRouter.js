@@ -1,4 +1,6 @@
 import express from "express";
+import path from "path";
+import multer from "multer";
 import {
   getLogin,
   postLogin,
@@ -6,8 +8,29 @@ import {
   postAccount,
   getLoginHelp,
   postLoginHelp,
+  logout,
 } from "../controllers/loginController.js";
-import { email } from "../middlewares/loginMiddleware.js";
+import {
+  getEditProfile,
+  postEditProfile,
+} from "../controllers/loginController.js";
+import { login_inspect, email } from "../middlewares/loginMiddleware.js";
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    if (file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
+      // 절대경로로 변경
+      cb(
+        null,
+        path.join(process.cwd(), "/server/public/file/upload/userProfile")
+      );
+    }
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
 
 const loginRouter = express.Router();
 
@@ -16,6 +39,12 @@ const loginRouter = express.Router();
 
 loginRouter.route("/").get(getLogin).post(postLogin);
 loginRouter.route("/account").get(getAccount).post(email, postAccount);
+loginRouter
+  .route("/account/editProfile")
+  .get(login_inspect, getEditProfile)
+  .post(upload.single("upload_profileImg"), postEditProfile);
 loginRouter.route("/loginHelp").get(getLoginHelp).post(postLoginHelp);
+
+loginRouter.get("/logout", logout);
 
 export default loginRouter;

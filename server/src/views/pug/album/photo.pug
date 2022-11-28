@@ -48,8 +48,10 @@ html(lang="en")
                     div.title #{title}
                     div.user
                         div.profile
-                            img(src=`${profileImg}`)
-                        div.username #{nickname}
+                            a(href=`/trip/${ownedUser}`)
+                                img(src=`/file/upload/userProfile/${profileImg}`)
+                        a(href=`/trip/${ownedUser}`).username
+                            div #{ownedUser}
                     div.description #{description}
                 <!-- 댓글 작성 --!>
                 div.comment
@@ -57,7 +59,8 @@ html(lang="en")
                         <!-- 댓글 입력 --!>
                         div.inputText
                             div.profile
-                                img(src=`${profileImg}`)
+                                a(href=`/trip/${nickname}`)
+                                    img(src=`/file/upload/userProfile/${myProfile}`)
                             input(type="text" name="text" placeholder="댓글 입력...").commentInput
                         <!-- 작성된 댓글 목록 --!>
                         div.commentList
@@ -66,10 +69,12 @@ html(lang="en")
                                     each comment in comments
                                         div.commentBox
                                             div.viewImgBox
-                                                img(src=`${comment.profileImg}`)
+                                                a(href=`/trip/${comment.author}`)
+                                                    img(src=`/file/upload/userProfile/${comment.profileImg}`)
                                             div.viewCommentBox
                                                 div.underViewName
-                                                    div=comment.author
+                                                    a(href=`/trip/${comment.author}`)
+                                                        div=comment.author
                                                     div=comment.createAt
                                                 div.underViewText 
                                                     div=comment.text

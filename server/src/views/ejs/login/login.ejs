@@ -9,13 +9,8 @@
     <title>Document</title>
   </head>
   <body>
-    <% if(locals.login_info) { %> <% locals.login_info.forEach(i => { %>
-    <input
-      type="hidden"
-      id="<%= i.id %>"
-      class="<%= i.class %>"
-      value="<%= i.error %>"
-    />
+    <% if(locals.errorCode) { %> <% locals.errorCode.forEach(i => { %>
+    <input type="hidden" class="<%= i.error %>" value="<%= i.errorId %>" />
     <% })} %>
     <div id="container" class="loginContainer">
       <p style="color: white; font-size: 30px">로그인</p>

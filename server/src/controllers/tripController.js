@@ -1,7 +1,5 @@
 import Image from "../../database/image.js";
 import User from "../../database/User.js";
-import Comment from "../../database/comment.js";
-import mongoose from "mongoose";
 
 export const world = (req, res) => {
   return res.render("ejs/world/world.ejs");
@@ -35,6 +33,12 @@ export const getPhoto = async (req, res) => {
   // 현재 게시물 작성자
   const ownedUser = req.url.split("/")[1];
   const { _id, profileImg } = await User.findOne({ nickname: ownedUser });
+
+  // 댓글 작성자의 정보 받기
+  const user = await User.findOne({ nickname });
+  const myProfile = user.profileImg;
+
+  // 댓글 입력했을 때 게시물 바로 찾기 위해서
   req.session.postId = _id;
 
   // 접근한 게시물의 파일 정보
@@ -48,8 +52,10 @@ export const getPhoto = async (req, res) => {
 
   if (imageFile.length !== 0) {
     return res.render("pug/album/photo.pug", {
+      myProfile,
       profileImg,
       title,
+      ownedUser,
       description,
       nickname,
       imageFile,
@@ -90,7 +96,7 @@ export const postPhoto = async (req, res) => {
     profileImg,
     author: nickname,
     text,
-    createAt: `${year}/${month}/${date} · ${hours}/${minutes}`,
+    createAt: `${year}/${month}/${date} · ${hours}${minutes}`,
   };
 
   // 댓글 정보 DB 업로드
@@ -101,9 +107,31 @@ export const postPhoto = async (req, res) => {
 };
 
 export const getProfile = async (req, res) => {
+  // header 에서 사용할 프로필 url 주소
   const { nickname } = req.session;
+  // 현재 유저 프로필 url 주소
+  const name = req.url.split("/")[1];
 
-  return res.render("pug/album/profile.pug", { nickname });
+  // 접속한 url 의 회원정보 고유 id 를 찾고, 일치하는 고유 id 의 업로드 파일 찾기
+  const user = await User.findOne({ nickname: name });
+  const upload = await Image.findOne({ user: user._id });
+
+  // 로그인 한 계정의 프로필인 경우 true 아니면 false
+  const owned = user.nickname === nickname ? true : false;
+
+  // 업로드 한 파일이 존재하면 file 값 전달
+  if (upload) {
+    const { file } = upload;
+    return res.render("pug/album/profile.pug", {
+      nickname,
+      name,
+      user,
+      owned,
+      file,
+    });
+  } else {
+    return res.render("pug/album/profile.pug", { nickname, name, user, owned });
+  }
 };
 
 export const getUpload = (req, res) => {

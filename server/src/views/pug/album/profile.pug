@@ -41,19 +41,33 @@ html(lang="en")
             div.userProfile_border
                 <!-- 유저 프로필 사진 --!>
                 div.userProfileImg
-                    img(src="/file/landmark/1.jpg").profileView
+                    img(src=`/file/upload/userProfile/${user.profileImg}`).profileView
                 <!-- 유저 기본정보 --!>
                 div.userInfo_container
                     div.userInfo_border
                         div.username
-                            div.name 이름입니다.
-                            div.editProfile
-                                a(href="") 프로필 편집
-                        div.userDescription
-                            div 설명입니다.
+                            div.name #{user.nickname}
+                            div.profileRevice
+                                if(owned)
+                                    div.editProfile
+                                        a(href="/account/editProfile") 프로필 편집
+                                    div.logout
+                                        a(href='/logout') 로그아웃
+                        div.userIntroduce
+                            div #{user.introduce}
 
             <!-- 파일 확장자에 따른 보이기 선택 --!>
             div.selectView
-                    div.imgRecode 이미지
-                    div.videoRecode 비디오
-                    div.landmarkRecode 랜드마크
+                div.imgRecode 이미지
+                div(onClick="location.href='/v'").videoRecode 비디오
+                div.landmarkRecode 랜드마크
+
+            div.selectViewFile
+                if(file)
+                    each i in file
+                        a(href=`${name}/${i.fileId}`)
+                            div.viewBox
+                                img(src=`/file/upload/image/${i.imageFile[0]}`).viewImg
+                else
+                    div.noFile
+                        div.msg 등록된 게시물이 없습니다.        
