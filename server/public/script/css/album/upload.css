@@ -9,10 +9,9 @@ html {
 
 .upload_topContainer {
   width: 100%;
-  height: 100%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -24,7 +23,7 @@ html {
   border-radius: 10px;
 }
 
-.upload_imageBox {
+.uploadBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +34,14 @@ html {
   color: white;
 }
 
-.upload_imageBox > .upload_imageBox_visibleNormal > .upload_button {
+.uploadBox > .uploadBox_visibleNormal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadBox > .uploadBox_visibleNormal > .upload_button {
   width: 150px;
   height: 25px;
   text-align: center;
@@ -49,19 +55,23 @@ html {
   cursor: pointer;
 }
 
-.upload_imageBox > .upload_imageBox_visibleNormal > .upload_button:active {
+.uploadBox > .uploadBox_visibleNormal > .upload_button:active {
   background-color: rgba(0, 174, 255, 0.4);
   box-shadow: none;
 }
 
-.upload_imageBox > .upload_imageBox_visibleNormal > .upload_button,
-.upload_imageBox > .upload_imageBox_visibleNormal > i {
+.uploadBox > .uploadBox_visibleNormal > .upload_button,
+.uploadBox > .uploadBox_visibleNormal > .img_icon {
   width: 150px;
   text-align: center;
   margin: 20px 0 20px 0;
 }
 
-.upload_imageBox > .upload_imageBox_selectVisible {
+.errorMsg {
+  margin-top: 20px;
+}
+
+.uploadBox > .uploadBox_selectVisible {
   width: 100%;
   height: 100%;
   display: none;
@@ -69,21 +79,21 @@ html {
   justify-content: space-between;
 }
 
-.upload_imageBox_selectVisible > .del_button,
-.upload_imageBox_selectVisible > .add_button {
+.uploadBox_selectVisible > .del_button,
+.uploadBox_selectVisible > .add_button {
   display: flex;
   justify-content: end;
   margin: 10px 15px 10px 0;
 }
 
-.upload_imageBox_selectVisible > .select_button {
+.uploadBox_selectVisible > .select_button {
   display: flex;
   justify-content: space-between;
   margin: 0 10px 0 10px;
   /*text-align: justify;*/
 }
 
-.upload_imageBox_selectVisible > .select_button > .left_button {
+.uploadBox_selectVisible > .select_button > .left_button {
   visibility: hidden;
 }
 
@@ -105,6 +115,11 @@ html {
 
 .button_circle:active {
   opacity: 0.85;
+}
+
+.video {
+  width: 700px;
+  height: 400px;
 }
 
 .upload_imageInfo_container {
@@ -213,4 +228,8 @@ html {
     width: 0px;
     height: 800px;
   }
+}
+
+.hidden {
+  display: none;
 }

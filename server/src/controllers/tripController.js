@@ -1,5 +1,6 @@
 import Image from "../../database/image.js";
 import User from "../../database/User.js";
+import Video from "../../database/video.js";
 
 export const world = (req, res) => {
   return res.render("ejs/world/world.ejs");
@@ -148,7 +149,10 @@ export const postUpload = async (req, res) => {
   let upload_file_array = [],
     new_file = [];
 
-  const userId_exist = await Image.exists({ user: userId });
+  console.log(files);
+
+  const userId_exist_image = await Image.exists({ user: userId });
+  const userId_exist_video = await Video.exists({ user: userId });
 
   // 업로드 할 이미지의 유무
   if (files) {
@@ -172,19 +176,36 @@ export const postUpload = async (req, res) => {
     ];
   }
 
-  // 업로드 된 파일이 없으면 새로 생성, 있으면 배열에 추가
-  if (userId_exist) {
-    let { file } = await Image.findOne({ user: userId });
-    file.unshift(...new_file);
+  if (files[0].mimetype === "video/mp4") {
+    if (userId_exist_video) {
+      let { file } = await Video.findOne({ user: userId });
+      file.unshift(...new_file);
 
-    await Image.findOneAndUpdate({ user: userId }, { file });
-    // return
+      await Video.findOneAndUpdate({ user: userId }, { file });
+      // return
+    } else {
+      await Video.create({
+        user: userId,
+        file: new_file,
+      });
+
+      // return
+    }
   } else {
-    await Image.create({
-      user: userId,
-      file: new_file,
-    });
+    // 업로드 된 파일이 없으면 새로 생성, 있으면 배열에 추가
+    if (userId_exist_image) {
+      let { file } = await Image.findOne({ user: userId });
+      file.unshift(...new_file);
 
-    // return
+      await Image.findOneAndUpdate({ user: userId }, { file });
+      // return
+    } else {
+      await Image.create({
+        user: userId,
+        file: new_file,
+      });
+
+      // return
+    }
   }
 };

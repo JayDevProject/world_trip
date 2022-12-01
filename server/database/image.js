@@ -4,7 +4,6 @@ const imageSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   file: [
     {
-      // country: { type: String },
       fileId: { type: String, unique: true, default: "" },
       title: { type: String, default: "[ 제목 없음 ]" },
       createAt: { type: String, default: Date.now },

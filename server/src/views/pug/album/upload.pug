@@ -4,23 +4,53 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/script/css/album/header.css")
         link(rel="stylesheet" href="/script/css/album/upload.css")
         script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
         title Document
     body 
+        <!-- 상단 메뉴 --!>
+        div.header
+            <!-- 홈 --!>
+            div.header_container
+                div.home
+                    a(href="/trip").homeBtn
+                        i(class="fas fa-home")
+                        span Trip
+                <!-- 검색 --!>
+                div.searchArea
+                    form(method="GET")
+                        div.search
+                            input(type="text" name="search" placeholder="검색")
+                            button
+                                i(class="fas fa-search")
+                <!-- 메뉴 --!>
+                div.navMenu
+                    div.uploadArea
+                        a(href="/trip/upload").upload
+                            i(class="fas fa-upload")
+                            span 업로드
+                    div.profileArea
+                        div.profile
+                            a(href=`/trip/${nickname}`).link
+                                div.profileImage
+                                span 프로필
         <!-- 업로드 --!>
         div.upload_topContainer
             form(method="POST" enctype="multipart/form-data") 
                 <!-- input 버튼 숨김 --!>
                 input(type="file" style="display: none" id="hidden_uploadFile_input" name="upload_file" accept=".jpg, .png, .gif, .svg, .mp4" multiple)
                 div.upload_downContainer
-                    div.upload_imageBox
+                    div.uploadBox.videoBox.hidden
+                        video(autoplay controls).video
+                    div.uploadBox.image
                         <!-- 맨 처음과 이미지 선택이 없을 시 보임 --!>
-                        div.upload_imageBox_visibleNormal
+                        div.uploadBox_visibleNormal
                             i.img_icon(class="fas fa-photo-video fa-4x")
+                            div.errorMsg
                             div.upload_button 컴퓨터에서 선택
                         <!-- 이미지 선택했을 시 보임 --!>
-                        div.upload_imageBox_selectVisible
+                        div.uploadBox_selectVisible
                             <!-- 보이는 현재 이미지 삭제 --!>
                             div.del_button
                                 div.button_circle.del_button
