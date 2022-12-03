@@ -85,15 +85,20 @@
   border-top: 1px solid gray;
 }
 
-.selectView > div {
+.selectView > a {
   width: 100px;
   text-align: center;
   line-height: 35px;
   color: white;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.selectView > div:hover {
+.selectView > a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tab {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -111,6 +116,12 @@
 
 .viewImg:hover {
   filter: brightness(50%);
+}
+
+.viewVideo {
+  width: 244px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .noFile {

@@ -197,22 +197,7 @@ export const getLoginHelp = (req, res) => {
 };
 
 export const postLoginHelp = async (req, res) => {
-  const { find, email } = req.body;
-
-  const emailExist = await User.exists({ email });
-
-  if (emailExist) {
-    switch (find) {
-      case "findId":
-        const findId = await User.findOne({ email });
-        return res.render("/");
-      case "findPassword":
-        const findPassword = await User.findOne({ email });
-        return res.render("/");
-    }
-  } else {
-    return res.render("ejs/login/loginHelp.ejs");
-  }
+  return res.redirect("/");
 };
 
 export const getEditProfile = async (req, res) => {
@@ -309,7 +294,8 @@ export const postEditProfile = async (req, res) => {
       {
         profileImg: file ? file.filename : user.profileImg,
         nickname: name,
-        introduce,
+        introduce:
+          introduce === "" ? "[ 입력된 소개글이 없습니다. ]" : introduce,
         email: email,
         password: encodingPassword ? encodingPassword : user.password,
       }

@@ -14,7 +14,11 @@ import {
   getEditProfile,
   postEditProfile,
 } from "../controllers/loginController.js";
-import { login_inspect, email } from "../middlewares/loginMiddleware.js";
+import {
+  login_inspect,
+  email,
+  findEmail,
+} from "../middlewares/loginMiddleware.js";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -43,7 +47,10 @@ loginRouter
   .route("/account/editProfile")
   .get(login_inspect, getEditProfile)
   .post(upload.single("upload_profileImg"), postEditProfile);
-loginRouter.route("/loginHelp").get(getLoginHelp).post(postLoginHelp);
+loginRouter
+  .route("/loginHelp")
+  .get(getLoginHelp)
+  .post(findEmail, postLoginHelp);
 
 loginRouter.get("/logout", logout);
 

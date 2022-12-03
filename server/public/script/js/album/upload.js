@@ -70,7 +70,7 @@ right_button.addEventListener("click", () => {
   setButton(file_array.length, count);
 });
 
-/** 배열의 이미지 파일 읽기 */
+/** 배열의 파일 읽기 */
 function readFile(arr) {
   const reader = new FileReader();
   reader.onload = (data) => {

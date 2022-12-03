@@ -6,17 +6,19 @@
   z-index: 0;
 }
 
-.book {
+.book,
+.videoBorder {
   margin: 20px 0 10px 0;
   overflow: hidden;
 }
 
-.viewImage {
-  width: 800px;
+.viewImage,
+.viewVideo {
+  width: 850px;
   height: 500px;
 }
 
-.imageInformation {
+.postInformation {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
   padding: 10px 0 10px 0;
@@ -28,7 +30,18 @@
   display: flex;
 }
 
-.user > .username {
+.user > .profileBorder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 854px;
+}
+
+.profile {
+  display: flex;
+}
+
+.user > .profileBorder > .profile > .username {
   line-height: 60px;
   margin-left: 20px;
   text-decoration: none;
@@ -48,8 +61,24 @@
   display: flex;
 }
 
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: black;
+}
+
+.like > .notLikeIcon,
+.likeIcon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .inputText > input {
-  width: 740px;
+  width: 790px;
   height: 40px;
   border: none;
   border-bottom: 1px solid gray;
@@ -155,7 +184,7 @@
   height: 100px;
 }
 
-.anotherView > img {
+.anotherView > .viewFile {
   width: 160px;
   height: 100px;
   object-fit: contain;
@@ -171,12 +200,21 @@
   color: white;
 }
 
-.anotherInfo > .username {
+.anotherInfo > a {
   font-size: 12px;
   margin-top: 5px;
   color: gray;
+  text-decoration: none;
+}
+
+.anotherInfo > .linkFile {
+  color: white;
+}
+
+.anotherInfo > .linkProfile:hover {
+  color: white;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }

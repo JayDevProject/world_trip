@@ -7,7 +7,7 @@ html(lang="en")
         link(rel="stylesheet" href="/script/css/album/header.css")
         link(rel="stylesheet" href="/script/css/album/photo.css")
         script(src="https://kit.fontawesome.com/809697769a.js" crossorigin="anonymous")
-        title Document
+        title Trip | #{post.title}
     body
         <!-- 상단 메뉴 --!>
         div.header
@@ -19,9 +19,9 @@ html(lang="en")
                         span Trip
                 <!-- 검색 --!>
                 div.searchArea
-                    form(method="GET")
+                    form(method="GET").searchForm
                         div.search
-                            input(type="text" name="search" placeholder="검색")
+                            input(type="text" name="search" placeholder="검색").searchInput
                             button
                                 i(class="fas fa-search")
                 <!-- 메뉴 --!>
@@ -39,20 +39,33 @@ html(lang="en")
         div.container
             div.viewContainer
                 <!-- 업로드 파일 --!>
-                div.book
-                    div.viewImage
-                        each i, idx in imageFile
-                            img(src=`/file/upload/image/${i}`)
+                <!-- fileId 가 이미지 파일 --!>
+                if(image)
+                    div.book
+                        div.viewImage
+                            each i in post.imageFile
+                                img(src=`/file/upload/image/${i}`)
+                <!-- fileId 가 비디오 파일 --!>
+                if(video)
+                    div.videoBorder
+                        div.viewVideo
+                            video(autoplay controls)
+                                source(src=`/file/upload/video/${post.videoFile}` type="video/mp4")
                 <!-- 업로드 파일 제목, 유저 정보, 문구 --!>
-                div.imageInformation
-                    div.title #{title}
+                div.postInformation
+                    div.title #{post.title}
                     div.user
-                        div.profile
-                            a(href=`/trip/${ownedUser}`)
-                                img(src=`/file/upload/userProfile/${profileImg}`)
-                        a(href=`/trip/${ownedUser}`).username
-                            div #{ownedUser}
-                    div.description #{description}
+                        div.profileBorder
+                            div.profile
+                                a(href=`/trip/${post.ownedPostUser}`)
+                                    img(src=`/file/upload/userProfile/${post.postProfileImg}`)
+                                a(href=`/trip/${post.ownedPostUser}`).username
+                                    div #{post.ownedPostUser}
+                            div.like
+                                i(class="far fa-heart fa-lg").notLikeIcon
+                                i(class="fas fa-heart fa-lg").likeIcon.hidden
+                                span.likeNum #{post.like}
+                    div.description #{post.description}
                 <!-- 댓글 작성 --!>
                 div.comment
                     form(method="POST" autocomplete='off').commentForm
@@ -60,13 +73,13 @@ html(lang="en")
                         div.inputText
                             div.profile
                                 a(href=`/trip/${nickname}`)
-                                    img(src=`/file/upload/userProfile/${myProfile}`)
+                                    img(src=`/file/upload/userProfile/${post.myProfile}`)
                             input(type="text" name="text" placeholder="댓글 입력...").commentInput
                         <!-- 작성된 댓글 목록 --!>
                         div.commentList
                             ul.commentUl
-                                if(comments.length !== 0)
-                                    each comment in comments
+                                if(post.comments.length !== 0)
+                                    each comment in post.comments
                                         div.commentBox
                                             div.viewImgBox
                                                 a(href=`/trip/${comment.author}`)
@@ -79,20 +92,35 @@ html(lang="en")
                                                 div.underViewText 
                                                     div=comment.text
                                 else
-                                    div.noComment 작성된 댓글이 없습니다.            
+                                    div.noComment 작성된 댓글이 없습니다.
+            <!-- 게시물 작성자의 또 다른 게시물 --!>            
             div.anotherFile
-                each i in anotherFile
-                    div.contents
-                        div.anotherList
-                            div.anotherView
-                                img.img(src=`/file/upload/image/${i.imageFile[0]}`)
-                            div.anotherInfo
-                                div.title #{i.title}
-                                div.username #{nickname}
+                each i in post.anotherFile
+                    if(image)
+                        div.contents
+                            a(href=`${i.fileId}`).linkFile
+                                div.anotherList
+                                    div.anotherView
+                                        img(src=`/file/upload/image/${i.imageFile[0]}`).img.viewFile
+                                    div.anotherInfo
+                                        div.title #{i.title}
+                                        a(href=`/trip/${post.ownedPostUser}`).linkProfile
+                                            div.username #{post.ownedPostUser}
+                    if(video)
+                        div.contents
+                            a(href=`${i.fileId}`).linkFile
+                                div.anotherList
+                                    div.anotherView
+                                        video.viewFile
+                                            source(src=`/file/upload/video/${i.videoFile}` type="video/mp4").video
+                                    div.anotherInfo
+                                        div.title #{i.title}
+                                        a(href=`/trip/${post.ownedPostUser}`).linkProfile
+                                            div.username #{post.ownedPostUser}
 
-
-
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer")
-        script(src="/script/js/lib/turn.js")
+        if(image)
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+            script(src="/script/js/lib/turn.js")
+            script $('.viewImage').turn({gradients: true, acceleration: true});
         script(src="/script/js/album/photo.js")
-        script $('.viewImage').turn({gradients: true, acceleration: true});
+        script(src="/script/js/album/like.js")

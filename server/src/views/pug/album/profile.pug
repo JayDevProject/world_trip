@@ -58,16 +58,30 @@ html(lang="en")
 
             <!-- 파일 확장자에 따른 보이기 선택 --!>
             div.selectView
-                div.imgRecode 이미지
-                div(onClick="location.href='/v'").videoRecode 비디오
-                div.landmarkRecode 랜드마크
+                <!-- 현재 프로필 유저 url 값을 가져오고, pathname 경로에 따라 색상 변경 --!>
+                input(type="hidden" class="user" value=`${name}`)
+                a(href=`/trip/${name}`).imgPost
+                    div 이미지
+                a(href=`/trip/${name}/v`).videoPost
+                    div 비디오
+                a(href=`/trip/${name}/f`).favPost
+                    div 좋아요
 
             div.selectViewFile
-                if(file)
-                    each i in file
+                if(images)
+                    each i in images
                         a(href=`${name}/${i.fileId}`)
                             div.viewBox
                                 img(src=`/file/upload/image/${i.imageFile[0]}`).viewImg
+                
+                else if(videos)
+                    each v in videos
+                        a(href=`/trip/${name}/${v.fileId}`)
+                            div.viewBox
+                                video.viewVideo
+                                    source(src=`/file/upload/video/${v.videoFile}` type="video/mp4")
                 else
                     div.noFile
-                        div.msg 등록된 게시물이 없습니다.        
+                        div.msg 등록된 게시물이 없습니다.   
+        <!-- 메뉴 탭 색상 관련 스크립트 --!>     
+        script(src="/script/js/album/profile.js")

@@ -1,5 +1,7 @@
 import "express-session";
 import nodemailer from "nodemailer";
+import bcrypt from "bcrypt";
+import User from "../../database/User.js";
 
 /** 로그인 정보 조회 */
 export const login_inspect = (req, res, next) => {
@@ -55,4 +57,67 @@ export const email = (req, res, next) => {
   }
 
   next();
+};
+
+export const findEmail = async (req, res, next) => {
+  const { email } = req.body;
+  let message = "";
+
+  // 이메일이 있는 경우
+  if (email) {
+    const emailExists = await User.findOne({ email });
+
+    if (emailExists) {
+      const { userId } = await User.findOne({ email });
+      const password =
+        new Date().getTime().toString(36) + new Date().getSeconds();
+
+      let transport = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.GMAIL,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+      });
+
+      let mailOption = {
+        from: process.env.GMAIL,
+        to: email,
+        subject: "[trip] 계정 찾기 서비스입니다.",
+        text: `
+        귀하의 계정 안내입니다.
+
+        ID: ${userId}
+        PASSWORD: ${password}
+        
+        계정 접속 후 비밀번호 변경을 권장드립니다.`,
+      };
+
+      transport.sendMail(mailOption, (error, response) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+
+        console.log(response);
+      });
+
+      const newEncodingPwd = await bcrypt.hash(password, 5);
+
+      await User.findOneAndUpdate(
+        { email },
+        {
+          password: newEncodingPwd,
+        }
+      );
+
+      return next();
+    }
+
+    message = "가입된 이메일이 없습니다. 다시 입력해주세요.";
+    return res.render("ejs/login/loginHelp.ejs", { message });
+  }
+
+  message = "이메일을 입력해주세요.";
+  return res.render("ejs/login/loginHelp.ejs", { message });
 };

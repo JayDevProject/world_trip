@@ -4,48 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes"
-    />
     <link rel="stylesheet" href="/script/css/login/login_background.css" />
     <link rel="stylesheet" href="/script/css/login/loginHelp_style.css" />
-    <title>Document</title>
+    <title>Login Help</title>
   </head>
   <body>
-    <div class="logo">
-      <a href="/">TRIP</a>
-    </div>
     <div id="container" class="helpContainer">
+      <div class="header">
+        <a class="logo_title" href="/">TRIP</a>
+      </div>
       <div class="form_container">
-        <h2>아이디 / 비밀번호를 잊으셨나요?</h2>
-        <form method="POST">
-          <div class="radio_container">
-            <div id="findId_radio" class="radio">
-              <input
-                type="radio"
-                id="findId"
-                value="findId"
-                name="find"
-                checked
-              />
-              <label for="findId">아이디 찾기</label>
-            </div>
-            <div id="findPwd_radio" class="radio">
-              <input
-                type="radio"
-                id="findPassword"
-                value="findPassword"
-                name="find"
-              />
-              <label for="findPassword">비밀번호 찾기</label>
-            </div>
-          </div>
+        <div class="helpGuide">
+          <h2>아이디 / 비밀번호를 잊으셨나요?</h2>
+        </div>
+        <form class="helpForm" method="POST">
           <div class="findContainer">
-            <label for="find">이메일</label>
-            <input id="find" type="email" name="email" placeholder="email" />
+            <h4>
+              <label for="findEmail">이메일</label>
+            </h4>
+            <div class="inputEmail">
+              <input id="findEmail" type="email" name="email" placeholder="email" autocomplete="off" />
+            </div>
+            <span class="helpDescription">* 가입된 이메일을 입력해주세요.</span></br>
+            <span class="message"><%= locals.message %></span>
           </div>
-          <button>확인</button>
+          <button class="helpButton">제출</button>
         </form>
       </div>
     </div>

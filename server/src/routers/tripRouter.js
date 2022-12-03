@@ -3,16 +3,16 @@ import path from "path";
 import multer from "multer";
 import {
   home,
-  world,
-  album,
   getPhoto,
   postPhoto,
-  getProfile,
+  profileImage,
+  profileVideo,
   getUpload,
-  postUpload,
+  postVideoUpload,
+  postImageUpload,
 } from "../controllers/tripController.js";
 import { login_inspect } from "../middlewares/loginMiddleware.js";
-import { continent, search } from "../middlewares/tripMiddleware.js";
+import { search, like } from "../middlewares/tripMiddleware.js";
 
 // 확장자에 따른 저장 폴더 구분 및 이름 변경
 const storage = multer.diskStorage({
@@ -39,9 +39,10 @@ tripRouter.get("/", login_inspect, search, home);
 tripRouter
   .route("/upload")
   .get(login_inspect, getUpload)
-  .post(upload.array("upload_file"), postUpload);
+  .post(upload.array("upload_file"), postVideoUpload, postImageUpload);
 
-tripRouter.get("/:id", login_inspect, getProfile);
-tripRouter.route("/:id/:id").get(login_inspect, getPhoto).post(postPhoto);
+tripRouter.get("/:id", login_inspect, profileImage);
+tripRouter.get("/:id/v", profileVideo);
+tripRouter.route("/:id/:id").get(login_inspect, getPhoto).post(like, postPhoto);
 
 export default tripRouter;
